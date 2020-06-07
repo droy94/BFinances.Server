@@ -1,0 +1,82 @@
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using BFinances.Server.Invoices.Application.Controllers;
+using BFinances.Server.Invoices.Contract.Settings;
+using BFinances.Server.Invoices.Infrastructure.Autofac;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace BFinances.Server.Entry
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public ILifetimeScope AutofacContainer { get; private set; }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new InvoicesModule());
+
+            builder.Register(p => Configuration.GetSection("ConnectionStrings").Get<DbConnectionConfig>()).SingleInstance();
+        }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddHttpClient();
+
+            services.Configure<DbConnectionConfig>(Configuration.GetSection("ConnectionStrings"));
+
+            var assembly = typeof(InvoicesController).Assembly;
+            services.AddControllers()
+                .PartManager.ApplicationParts.Add(new AssemblyPart(assembly));
+
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flights API", Version = "v1" });
+            //});
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            //app.UseSwagger();
+
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //    c.RoutePrefix = string.Empty;
+            //});
+        }
+    }
+}
