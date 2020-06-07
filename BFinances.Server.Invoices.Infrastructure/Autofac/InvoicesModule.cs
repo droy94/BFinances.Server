@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using BFinances.Server.Invoices.Contract.Providers;
+using BFinances.Server.Invoices.Infrastructure.Providers;
 using BFinances.Server.Invoices.Infrastructure.Repository;
 
 namespace BFinances.Server.Invoices.Infrastructure.Autofac
@@ -16,7 +17,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<IInvoicesProvider>()
+            builder.RegisterType<InvoicesProvider>()
                 .As<IInvoicesProvider>()
                 .InstancePerLifetimeScope();
         }
