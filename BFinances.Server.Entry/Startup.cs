@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using BFinances.Server.Invoices.Application.Controllers;
-using BFinances.Server.Invoices.Contract.Settings;
 using BFinances.Server.Invoices.Infrastructure.Autofac;
 using BFinances.Server.Invoices.Infrastructure.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -28,19 +27,14 @@ namespace BFinances.Server.Entry
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new InvoicesModule());
-
-            //builder.Register(p => Configuration.GetSection("ConnectionStrings").Get<ConnectionStrings>()).SingleInstance();
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
 
             services.AddDbContext<InvoicesDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("InvoicesDatabase")));
-
-            //services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
 
             var assembly = typeof(InvoicesController).Assembly;
             services.AddControllers()
