@@ -48,7 +48,7 @@ namespace BFinances.Server.Entry
 
             //services.AddSwaggerGen(c =>
             //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flights API", Version = "v1" });
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Invoices API", Version = "v1" });
             //});
         }
 

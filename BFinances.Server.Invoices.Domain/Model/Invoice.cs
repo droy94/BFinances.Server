@@ -4,5 +4,6 @@ namespace BFinances.Server.Invoices.Domain.Model
 {
     public class Invoice : Entity
     {
+        public string Number { get; set; }
     }
 }
