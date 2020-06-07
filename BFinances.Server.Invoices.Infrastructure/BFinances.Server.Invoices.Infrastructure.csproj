@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Flights.Contract\Invoices.Contract.csproj" />
-    <ProjectReference Include="..\Flights.Domain\Invoices.Domain.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Invoices.Domain\BFinances.Server.Invoices.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

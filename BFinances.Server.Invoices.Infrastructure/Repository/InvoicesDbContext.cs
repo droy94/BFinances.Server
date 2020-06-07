@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BFinances.Server.Invoices.Infrastructure.Repository
 {
-    public class InvoiceDbContext : DbContext, IInvoiceDbContext
+    public class InvoicesDbContext : DbContext, IInvoiceDbContext
     {
-        public InvoiceDbContext(DbContextOptions options) : base(options)
+        public InvoicesDbContext(DbContextOptions options) : base(options)
         {
         }
 

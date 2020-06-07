@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using BFinances.Server.Invoices.Contract.Flights;
 
 namespace BFinances.Server.Invoices.Infrastructure.Autofac
 {
@@ -7,9 +6,9 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<FlightsService>()
-                .As<IFlightsService>()
-                .InstancePerLifetimeScope();
+            //builder.RegisterType<FlightsService>()
+            //    .As<IFlightsService>()
+            //    .InstancePerLifetimeScope();
         }
     }
 }

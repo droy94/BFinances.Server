@@ -7,7 +7,11 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
@@ -15,10 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Flights.Application\Invoices.Application.csproj" />
-    <ProjectReference Include="..\Flights.Contract\Invoices.Contract.csproj" />
-    <ProjectReference Include="..\Flights.Domain\Invoices.Domain.csproj" />
-    <ProjectReference Include="..\Flights.Infrastructure\Invoices.Infrastructure.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
