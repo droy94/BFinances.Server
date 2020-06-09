@@ -1,7 +1,10 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
 using BFinances.Server.Invoices.Application.Controllers;
 using BFinances.Server.Invoices.Infrastructure.Autofac;
+using BFinances.Server.Invoices.Infrastructure.AutoMapper;
 using BFinances.Server.Invoices.Infrastructure.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -2,9 +2,11 @@
 using BFinances.Server.Invoices.Infrastructure.Repository;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Response;
 using Microsoft.EntityFrameworkCore;
+using Mapper = AutoMapper.Mapper;
 
 namespace BFinances.Server.Invoices.Infrastructure.Providers
 {
@@ -12,22 +14,23 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
     {
         private readonly InvoicesDbContext _dbContext;
 
-        public InvoicesProvider(InvoicesDbContext dbContext)
+        private readonly IMapper _mapper;
+
+        public InvoicesProvider(InvoicesDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public async Task<List<InvoiceResponse>> GetAll()
         {
-            var invoices = await _dbContext.Set<Invoice>().ToListAsync();
+            var invoices = await _dbContext.Set<Invoice>()
+                .Include(x => x.FromContractor)
+                .Include(x => x.ForContractor)
+                .Include(x => x.Pkwiu)
+                .ToListAsync();
 
-            var response = new List<InvoiceResponse>();
-
-            // TODO: Use mapper
-            foreach (var invoice in invoices)
-            {
-                response.Add(new InvoiceResponse { Number = invoice.Number, Id = invoice.Id });
-            }
+            var response = _mapper.Map<List<InvoiceResponse>>(invoices);
 
             return response;
         }
