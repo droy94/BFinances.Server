@@ -15,6 +15,10 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
                     opts => opts.MapFrom(y => y.ForContractor.Name))
                 .ForMember(x => x.Pkwiu,
                     opts => opts.MapFrom(y => y.Pkwiu.Code));
+
+            CreateMap<Contractor, ContractorResponse>();
+
+            CreateMap<Pkwiu, PkwiuResponse>();
         }
     }
 }

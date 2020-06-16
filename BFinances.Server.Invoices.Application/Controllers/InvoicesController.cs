@@ -17,7 +17,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         }
 
         [HttpGet]
-        public Task<List<InvoiceResponse>> GetAvailableCountries()
+        public Task<List<InvoiceResponse>> GetAllInvoices()
         {
             return _invoicesProvider.GetAll();
         }

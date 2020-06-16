@@ -23,6 +23,14 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
                 .As<IInvoicesProvider>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<ContractorProvider>()
+                .As<IContractorProvider>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<PkwiuProvider>()
+                .As<IPkwiuProvider>()
+                .InstancePerLifetimeScope();
+
             builder.AddAutoMapper(typeof(InvoicesProfile).Assembly);
         }
     }
