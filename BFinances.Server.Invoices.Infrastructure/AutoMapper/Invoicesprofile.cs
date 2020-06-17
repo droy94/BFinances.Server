@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
 using BFinances.Server.Invoices.Domain.Model;
 
@@ -19,6 +20,8 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
             CreateMap<Contractor, ContractorResponse>();
 
             CreateMap<Pkwiu, PkwiuResponse>();
+
+            CreateMap<InvoiceRequest, Invoice>();
         }
     }
 }
