@@ -15,9 +15,10 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
             //    .As<IInvoicesDbContext>()
             //    .InstancePerLifetimeScope();
 
+            // TODO: Zastanowić się czy tu pasuje SingleInstance. Jak jest w pracy?
             builder.RegisterType<InvoicesDbContext>()
                 .AsSelf()
-                .InstancePerLifetimeScope();
+                .SingleInstance();
 
             builder.RegisterType<InvoicesProvider>()
                 .As<IInvoicesProvider>()

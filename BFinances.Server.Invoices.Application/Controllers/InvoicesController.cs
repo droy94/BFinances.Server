@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Request;
@@ -24,7 +25,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         }
 
         [HttpPost]
-        public Task CreateInvoice([FromBody] InvoiceRequest invoice)
+        public Task CreateInvoice([FromBody]InvoiceRequest invoice)
         {
             _invoicesProvider.CreateInvoice(invoice);
 

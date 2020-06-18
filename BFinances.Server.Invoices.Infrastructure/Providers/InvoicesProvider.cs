@@ -41,6 +41,8 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             var invoice = _mapper.Map<Invoice>(invoiceRequest);
 
             await _dbContext.Set<Invoice>().AddAsync(invoice);
+
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
