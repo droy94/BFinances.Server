@@ -27,9 +27,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         [HttpPost]
         public Task CreateInvoice([FromBody]InvoiceRequest invoice)
         {
-            _invoicesProvider.CreateInvoice(invoice);
-
-            return Task.CompletedTask;
+            return _invoicesProvider.CreateInvoice(invoice);
         }
     }
 }

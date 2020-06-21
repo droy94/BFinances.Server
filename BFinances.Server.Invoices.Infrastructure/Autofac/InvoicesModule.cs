@@ -17,8 +17,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
 
             // TODO: Zastanowić się czy tu pasuje SingleInstance. Jak jest w pracy?
             builder.RegisterType<InvoicesDbContext>()
-                .AsSelf()
-                .SingleInstance();
+                .AsSelf();
 
             builder.RegisterType<InvoicesProvider>()
                 .As<IInvoicesProvider>()
