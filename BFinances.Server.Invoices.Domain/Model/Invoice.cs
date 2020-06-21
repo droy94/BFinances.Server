@@ -26,10 +26,6 @@ namespace BFinances.Server.Invoices.Domain.Model
 
         public string NetCurrency { get; set; } = "PLN";
 
-        public decimal GrossAmount { get; set; }
-
-        public string GrossCurrency { get; set; } = "PLN";
-
         public decimal VatPercent { get; set; }
 
         public int NumberOfUnits { get; set; }

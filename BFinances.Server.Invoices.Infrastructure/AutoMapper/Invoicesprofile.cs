@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
 using BFinances.Server.Invoices.Domain.Model;
@@ -9,19 +10,32 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
     {
         public InvoicesProfile()
         {
-            CreateMap<Invoice, InvoiceResponse>()
-                .ForMember(x => x.FromContractor,
-                    opts => opts.MapFrom(y => y.FromContractor.Name))
-                .ForMember(x => x.ForContractor,
-                    opts => opts.MapFrom(y => y.ForContractor.Name))
-                .ForMember(x => x.Pkwiu,
-                    opts => opts.MapFrom(y => y.Pkwiu.Code));
+            CreateMap<Invoice, InvoiceResponse>();
 
             CreateMap<Contractor, ContractorResponse>();
 
             CreateMap<Pkwiu, PkwiuResponse>();
 
-            CreateMap<InvoiceRequest, Invoice>();
+            CreateMap<ContractorRequest, Contractor>();
+
+            CreateMap<PkwiuRequest, Pkwiu>();
+
+            // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity
+            CreateMap<InvoiceRequest, Invoice>()
+                .ForMember(x => x.Number,
+                    opts => opts.MapFrom(y => GetNumber(y.InvoiceDate)))
+                .ForMember(x => x.FromContractorId,
+                    opts => opts.MapFrom(y => 1))
+                .ForMember(x => x.ForContractor,
+                    opts => opts.Ignore())
+                .ForMember(x => x.Pkwiu,
+                    opts => opts.Ignore());
+
+        }
+
+        private string GetNumber(DateTime invoiceDate)
+        {
+            return $"{invoiceDate.Month}/{invoiceDate.Year}";
         }
     }
 }

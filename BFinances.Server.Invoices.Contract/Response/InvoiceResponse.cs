@@ -12,7 +12,7 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public string FromContractor { get; set; }
 
-        public string ForContractor { get; set; }
+        public ContractorResponse ForContractor { get; set; }
 
         public DateTime InvoiceDate { get; set; }
 
@@ -22,14 +22,12 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public decimal NetAmount { get; set; }
 
-        public decimal GrossAmount { get; set; }
-
         public decimal VatPercent { get; set; }
 
         public int NumberOfUnits { get; set; }
 
         public string UnitName { get; set; }
 
-        public string Pkwiu { get; set; }
+        public PkwiuResponse Pkwiu { get; set; }
     }
 }

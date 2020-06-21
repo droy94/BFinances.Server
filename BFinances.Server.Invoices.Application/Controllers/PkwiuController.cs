@@ -19,7 +19,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         }
 
         [HttpGet]
-        public Task<List<PkwiuResponse>> GetAllInvoices()
+        public Task<List<PkwiuResponse>> GetAllPkwiu()
         {
             return _pkwiuProvider.GetAll();
         }

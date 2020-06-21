@@ -25,10 +25,10 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
 
         public async Task<List<PkwiuResponse>> GetAll()
         {
-            var invoices = await _dbContext.Set<Pkwiu>()
+            var pkwiu = await _dbContext.Set<Pkwiu>()
                 .ToListAsync();
 
-            var response = _mapper.Map<List<PkwiuResponse>>(invoices);
+            var response = _mapper.Map<List<PkwiuResponse>>(pkwiu);
 
             return response;
         }

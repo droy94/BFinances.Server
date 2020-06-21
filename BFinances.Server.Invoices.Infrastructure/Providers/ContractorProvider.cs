@@ -25,10 +25,10 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
 
         public async Task<List<ContractorResponse>> GetAll()
         {
-            var invoices = await _dbContext.Set<Contractor>()
+            var contractors = await _dbContext.Set<Contractor>()
                 .ToListAsync();
 
-            var response = _mapper.Map<List<ContractorResponse>>(invoices);
+            var response = _mapper.Map<List<ContractorResponse>>(contractors);
 
             return response;
         }

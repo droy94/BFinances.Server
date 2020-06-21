@@ -11,6 +11,7 @@ using Mapper = AutoMapper.Mapper;
 
 namespace BFinances.Server.Invoices.Infrastructure.Providers
 {
+    // TODO: Wydzielić z tego serwis i dodać repository jak w pracy
     public class InvoicesProvider : IInvoicesProvider
     {
         private readonly InvoicesDbContext _dbContext;
