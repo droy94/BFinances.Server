@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Common", "BFinances.Server.Invoices.Common\BFinances.Server.Invoices.Common.csproj", "{137560CC-709C-4F6A-A4DA-5A0E7654BEFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.DbUp", "BFinances.DbUp\BFinances.DbUp.csproj", "{710705A2-8226-4D72-A723-32025E4F8769}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{137560CC-709C-4F6A-A4DA-5A0E7654BEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{137560CC-709C-4F6A-A4DA-5A0E7654BEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{137560CC-709C-4F6A-A4DA-5A0E7654BEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710705A2-8226-4D72-A723-32025E4F8769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710705A2-8226-4D72-A723-32025E4F8769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710705A2-8226-4D72-A723-32025E4F8769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710705A2-8226-4D72-A723-32025E4F8769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
