@@ -13,11 +13,11 @@ namespace BFinances.DbUp
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.Development.json");
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true);
 
             var configuration = builder.Build();
 
-            // TODO: Dodać environment
             var connectionString = configuration.GetConnectionString("InvoicesDatabase");
 
             EnsureDatabase.For.SqlDatabase(connectionString);

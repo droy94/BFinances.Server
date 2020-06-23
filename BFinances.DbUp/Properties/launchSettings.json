@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BFinances.DbUp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
