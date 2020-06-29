@@ -33,7 +33,7 @@ namespace BFinances.DbUp
 
             if (!result.Successful)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Red; 
                 Console.WriteLine(result.Error);
                 Console.ResetColor();
 #if DEBUG
