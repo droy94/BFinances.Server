@@ -1,6 +1,7 @@
 ﻿using BFinances.Server.Invoices.Domain.Model;
 using BFinances.Server.Invoices.Infrastructure.Repository;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using BFinances.Server.Invoices.Contract.Providers;
@@ -42,6 +43,17 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             var invoice = _mapper.Map<Invoice>(invoiceRequest);
 
             await _dbContext.Set<Invoice>().AddAsync(invoice);
+
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task EditInvoice(InvoiceRequest invoiceRequest, long id)
+        {
+            var invoiceToEdit = await _dbContext.Set<Invoice>()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            _mapper.Map(invoiceRequest, invoiceToEdit);
 
             await _dbContext.SaveChangesAsync();
         }

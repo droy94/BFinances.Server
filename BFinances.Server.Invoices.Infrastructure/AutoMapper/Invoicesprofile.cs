@@ -28,6 +28,8 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
                     opts => opts.MapFrom(y => 1))
                 .ForMember(x => x.ForContractor,
                     opts => opts.Ignore())
+                .ForMember(x => x.FromContractor,
+                    opts => opts.Ignore())
                 .ForMember(x => x.Pkwiu,
                     opts => opts.Ignore());
 

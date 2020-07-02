@@ -29,5 +29,11 @@ namespace BFinances.Server.Invoices.Application.Controllers
         {
             return _invoicesProvider.CreateInvoice(invoice);
         }
+
+        [HttpPut("{id}")]
+        public Task EditInvoice([FromBody]InvoiceRequest invoice, long id)
+        {
+            return _invoicesProvider.EditInvoice(invoice, id);
+        }
     }
 }
