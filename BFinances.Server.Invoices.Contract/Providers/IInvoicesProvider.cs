@@ -12,5 +12,7 @@ namespace BFinances.Server.Invoices.Contract.Providers
         Task CreateInvoice(InvoiceRequest invoiceRequest);
 
         Task EditInvoice(InvoiceRequest invoiceRequest, long id);
+
+        Task<InvoiceResponse> Get(long id);
     }
 }

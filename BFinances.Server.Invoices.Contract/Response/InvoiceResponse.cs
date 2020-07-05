@@ -10,7 +10,7 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public string Number { get; set; }
 
-        public string FromContractor { get; set; }
+        public ContractorResponse FromContractor { get; set; }
 
         public ContractorResponse ForContractor { get; set; }
 

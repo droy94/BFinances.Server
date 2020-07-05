@@ -57,5 +57,19 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
 
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task<InvoiceResponse> Get(long id)
+        {
+            var invoice = await _dbContext.Set<Invoice>()
+                .Include(x => x.FromContractor)
+                .Include(x => x.ForContractor)
+                .Include(x => x.Pkwiu)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            var response = _mapper.Map<InvoiceResponse>(invoice);
+
+            return response;
+        }
     }
 }
