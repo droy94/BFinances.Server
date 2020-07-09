@@ -8,10 +8,6 @@ namespace BFinances.Server.Invoices.Contract.Request
     {
         public string Number { get; set; }
 
-        public long FromContractorId { get; set; }
-
-        public long ForContractorId { get; set; }
-
         public ContractorRequest ForContractor { get; set; }
 
         public ContractorRequest FromContractor { get; set; }
@@ -31,7 +27,5 @@ namespace BFinances.Server.Invoices.Contract.Request
         public string UnitName { get; set; }
 
         public PkwiuRequest Pkwiu { get; set; }
-
-        public long PkwiuId { get; set; }
     }
 }
