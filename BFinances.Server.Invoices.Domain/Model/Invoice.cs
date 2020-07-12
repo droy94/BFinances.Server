@@ -9,8 +9,6 @@ namespace BFinances.Server.Invoices.Domain.Model
     {
         public List<InvoiceItem> Items { get; set; }
 
-        public string ServiceName { get; set; }
-
         public string InvoiceNo { get; set; }
 
         public long FromContractorId { get; set; }

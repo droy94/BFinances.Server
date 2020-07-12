@@ -8,8 +8,6 @@ namespace BFinances.Server.Invoices.Contract.Request
     {
         public List<InvoiceItemRequest> Items { get; set; }
 
-        public string ServiceName { get; set; }
-
         public string InvoiceNo { get; set; }
 
         public ContractorRequest FromContractor { get; set; }

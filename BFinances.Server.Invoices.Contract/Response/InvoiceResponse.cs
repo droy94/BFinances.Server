@@ -10,8 +10,6 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public List<InvoiceItemResponse> Items { get; set; }
 
-        public string ServiceName { get; set; }
-
         public string InvoiceNo { get; set; }
 
         public ContractorResponse FromContractor { get; set; }

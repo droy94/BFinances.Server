@@ -12,6 +12,8 @@ namespace BFinances.Server.Invoices.Domain.Model
 
         public Invoice Invoice { get; set; }
 
+        public string ServiceName { get; set; }
+
         public decimal NetAmount { get; set; }
 
         public decimal VatPercent { get; set; }

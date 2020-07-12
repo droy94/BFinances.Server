@@ -8,6 +8,8 @@ namespace BFinances.Server.Invoices.Contract.Request
     {
         public InvoiceRequest Invoice { get; set; }
 
+        public string ServiceName { get; set; }
+
         public decimal NetAmount { get; set; }
 
         public decimal VatPercent { get; set; }
