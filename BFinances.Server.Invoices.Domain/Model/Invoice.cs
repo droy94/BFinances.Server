@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BFinances.Server.Invoices.Common.Model;
 using Microsoft.VisualBasic;
 
@@ -6,7 +7,11 @@ namespace BFinances.Server.Invoices.Domain.Model
 {
     public class Invoice : Entity
     {
-        public string Number { get; set; }
+        public List<InvoiceItem> Items { get; set; }
+
+        public string ServiceName { get; set; }
+
+        public string InvoiceNo { get; set; }
 
         public long FromContractorId { get; set; }
 
@@ -22,18 +27,8 @@ namespace BFinances.Server.Invoices.Domain.Model
 
         public DateTime SaleDate { get; set; }
 
-        public decimal NetAmount { get; set; }
+        public int DueDays { get; set; }
 
-        public string NetCurrency { get; set; } = "PLN";
-
-        public decimal VatPercent { get; set; }
-
-        public int NumberOfUnits { get; set; }
-
-        public string UnitName { get; set; }
-
-        public long PkwiuId { get; set; }
-
-        public Pkwiu Pkwiu { get; set; }
+        public decimal NetSum { get; set; }
     }
 }

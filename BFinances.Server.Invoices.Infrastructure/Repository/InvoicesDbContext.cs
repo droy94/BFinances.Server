@@ -19,21 +19,19 @@ namespace BFinances.Server.Invoices.Infrastructure.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Invoice>()
-                .ToTable("Invoice");
-
-            modelBuilder.Entity<Invoice>()
+                .ToTable("Invoices")
                 .HasKey(x => x.Id);
 
             modelBuilder.Entity<Pkwiu>()
-                .ToTable("Pkwiu");
-
-            modelBuilder.Entity<Pkwiu>()
+                .ToTable("Pkwiu")
                 .HasKey(x => x.Id);
 
             modelBuilder.Entity<Contractor>()
-                .ToTable("Contractor");
+                .ToTable("Contractors")
+                .HasKey(x => x.Id);
 
-            modelBuilder.Entity<Contractor>()
+            modelBuilder.Entity<InvoiceItem>()
+                .ToTable("InvoiceItems")
                 .HasKey(x => x.Id);
         }
     }

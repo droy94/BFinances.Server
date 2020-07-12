@@ -8,7 +8,11 @@ namespace BFinances.Server.Invoices.Contract.Response
     {
         public long Id { get; set; }
 
-        public string Number { get; set; }
+        public List<InvoiceItemResponse> Items { get; set; }
+
+        public string ServiceName { get; set; }
+
+        public string InvoiceNo { get; set; }
 
         public ContractorResponse FromContractor { get; set; }
 
@@ -20,14 +24,8 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public DateTime SaleDate { get; set; }
 
-        public decimal NetAmount { get; set; }
+        public int DueDays { get; set; }
 
-        public decimal VatPercent { get; set; }
-
-        public int NumberOfUnits { get; set; }
-
-        public string UnitName { get; set; }
-
-        public PkwiuResponse Pkwiu { get; set; }
+        public decimal NetSum { get; set; }
     }
 }

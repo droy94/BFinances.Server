@@ -16,23 +16,26 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
 
             CreateMap<Pkwiu, PkwiuResponse>();
 
+            CreateMap<InvoiceItem, InvoiceItemResponse>();
+
             CreateMap<ContractorRequest, Contractor>();
 
             CreateMap<PkwiuRequest, Pkwiu>();
 
             // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity
             CreateMap<InvoiceRequest, Invoice>()
-                .ForMember(x => x.Number,
+                .ForMember(x => x.InvoiceNo,
                     opts => opts.MapFrom(y => GetNumber(y.InvoiceDate)))
                 .ForMember(x => x.FromContractorId,
                     opts => opts.MapFrom(y => 1))
                 .ForMember(x => x.ForContractor,
                     opts => opts.Ignore())
                 .ForMember(x => x.FromContractor,
-                    opts => opts.Ignore())
-                .ForMember(x => x.Pkwiu,
                     opts => opts.Ignore());
 
+            CreateMap<InvoiceItemRequest, InvoiceItem>()
+                .ForMember(x => x.Pkwiu,
+                    opts => opts.Ignore());
         }
 
         private string GetNumber(DateTime invoiceDate)

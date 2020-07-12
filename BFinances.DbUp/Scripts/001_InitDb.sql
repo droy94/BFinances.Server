@@ -16,7 +16,7 @@ GO
 
 CREATE TABLE [dbo].[Invoices](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[ServiceName] [varchar(500)] NOT NULL,
+	[ServiceName] [varchar](500) NOT NULL,
 	[InvoiceNo] [varchar](50) NOT NULL,
 	[FromContractorId] [bigint] FOREIGN KEY REFERENCES Contractors(Id) NOT NULL,
 	[ForContractorId] [bigint] FOREIGN KEY REFERENCES Contractors(Id) NOT NULL,

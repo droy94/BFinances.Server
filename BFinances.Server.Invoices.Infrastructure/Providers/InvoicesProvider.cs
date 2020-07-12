@@ -30,7 +30,8 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             var invoices = await _dbContext.Set<Invoice>()
                 .Include(x => x.FromContractor)
                 .Include(x => x.ForContractor)
-                .Include(x => x.Pkwiu)
+                .Include(x => x.Items)
+                .ThenInclude(x => x.Pkwiu)
                 .ToListAsync();
 
             var response = _mapper.Map<List<InvoiceResponse>>(invoices);
@@ -63,7 +64,8 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             var invoice = await _dbContext.Set<Invoice>()
                 .Include(x => x.FromContractor)
                 .Include(x => x.ForContractor)
-                .Include(x => x.Pkwiu)
+                .Include(x => x.Items)
+                .ThenInclude(x => x.Pkwiu)
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
 
