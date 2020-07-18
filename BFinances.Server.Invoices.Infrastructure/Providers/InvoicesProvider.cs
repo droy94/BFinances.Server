@@ -48,9 +48,11 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             await _dbContext.SaveChangesAsync();
         }
 
+        // id po to, żeby nie zmieniać id modelu przy mapowaniu
         public async Task EditInvoice(InvoiceRequest invoiceRequest, long id)
         {
             var invoiceToEdit = await _dbContext.Set<Invoice>()
+                .Include(x => x.Items)
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
 

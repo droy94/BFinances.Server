@@ -8,8 +8,6 @@ namespace BFinances.Server.Invoices.Contract.Response
     {
         public long Id { get; set; }
 
-        public InvoiceResponse Invoice { get; set; }
-
         public string ServiceName { get; set; }
 
         public decimal NetAmount { get; set; }

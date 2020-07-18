@@ -33,6 +33,8 @@ namespace BFinances.Server.Invoices.Infrastructure.Repository
             modelBuilder.Entity<InvoiceItem>()
                 .ToTable("InvoiceItems")
                 .HasKey(x => x.Id);
+
+            modelBuilder.Entity<InvoiceItem>().Ignore(x => x.Invoice);
         }
     }
 }

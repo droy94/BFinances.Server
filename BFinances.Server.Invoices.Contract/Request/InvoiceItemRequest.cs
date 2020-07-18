@@ -6,8 +6,6 @@ namespace BFinances.Server.Invoices.Contract.Request
 {
     public class InvoiceItemRequest
     {
-        public InvoiceRequest Invoice { get; set; }
-
         public string ServiceName { get; set; }
 
         public decimal NetAmount { get; set; }
@@ -18,6 +16,6 @@ namespace BFinances.Server.Invoices.Contract.Request
 
         public string UnitName { get; set; }
 
-        public long PkwiuId { get; set; }
+        public PkwiuRequest Pkwiu { get; set; }
     }
 }

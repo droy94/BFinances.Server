@@ -11,31 +11,43 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
         public InvoicesProfile()
         {
             CreateMap<Invoice, InvoiceResponse>();
-
             CreateMap<Contractor, ContractorResponse>();
-
             CreateMap<Pkwiu, PkwiuResponse>();
-
             CreateMap<InvoiceItem, InvoiceItemResponse>();
 
             CreateMap<ContractorRequest, Contractor>();
-
             CreateMap<PkwiuRequest, Pkwiu>();
 
             // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity
             CreateMap<InvoiceRequest, Invoice>()
+                .ForMember(x => x.Id,
+                    opts => opts.Ignore())
                 .ForMember(x => x.InvoiceNo,
                     opts => opts.MapFrom(y => GetNumber(y.InvoiceDate)))
                 .ForMember(x => x.FromContractorId,
                     opts => opts.MapFrom(y => 1))
+                .ForMember(x => x.ForContractorId,
+                    opts => opts.MapFrom(y => y.ForContractor.Id))
                 .ForMember(x => x.ForContractor,
                     opts => opts.Ignore())
                 .ForMember(x => x.FromContractor,
                     opts => opts.Ignore());
 
             CreateMap<InvoiceItemRequest, InvoiceItem>()
+                .ForMember(x => x.Id,
+                    opts => opts.Ignore())
+                .ForMember(x => x.InvoiceId,
+                    opts => opts.Ignore())
+                .ForMember(x => x.PkwiuId,
+                    opts => opts.MapFrom(y => 1))
                 .ForMember(x => x.Pkwiu,
                     opts => opts.Ignore());
+
+
+                // TODO: Zmienić na to jak zrobię porządek na GUI z PKWIU
+                //.ForMember(x => x.PkwiuId,
+                //opts => opts.MapFrom(y => y.Pkwiu.Id))
+
         }
 
         private string GetNumber(DateTime invoiceDate)
