@@ -34,8 +34,6 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
                     opts => opts.Ignore());
 
             CreateMap<InvoiceItemRequest, InvoiceItem>()
-                .ForMember(x => x.Id,
-                    opts => opts.Ignore())
                 .ForMember(x => x.InvoiceId,
                     opts => opts.Ignore())
                 .ForMember(x => x.PkwiuId,

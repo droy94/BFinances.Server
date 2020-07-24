@@ -6,6 +6,8 @@ namespace BFinances.Server.Invoices.Contract.Request
 {
     public class InvoiceItemRequest
     {
+        public long Id { get; set; }
+
         public string ServiceName { get; set; }
 
         public decimal NetAmount { get; set; }
