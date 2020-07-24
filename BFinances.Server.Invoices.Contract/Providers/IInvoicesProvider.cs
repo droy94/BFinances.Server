@@ -14,5 +14,7 @@ namespace BFinances.Server.Invoices.Contract.Providers
         Task EditInvoice(InvoiceRequest invoiceRequest, long id);
 
         Task<InvoiceResponse> Get(long id);
+
+        Task DeleteInvoice(long id);
     }
 }

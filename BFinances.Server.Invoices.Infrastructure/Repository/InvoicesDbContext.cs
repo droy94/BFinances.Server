@@ -34,6 +34,12 @@ namespace BFinances.Server.Invoices.Infrastructure.Repository
                 .ToTable("InvoiceItems")
                 .HasKey(x => x.Id);
 
+            modelBuilder.Entity<InvoiceItem>()
+                .HasOne(x => x.Invoice)
+                .WithMany(x => x.Items)
+                .HasForeignKey(x => x.InvoiceId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<InvoiceItem>().Ignore(x => x.Invoice);
         }
     }

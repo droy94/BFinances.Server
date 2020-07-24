@@ -41,5 +41,11 @@ namespace BFinances.Server.Invoices.Application.Controllers
         {
             return _invoicesProvider.Get(id);
         }
+
+        [HttpDelete("{id}")]
+        public Task DeleteInvoice(long id)
+        {
+            return _invoicesProvider.DeleteInvoice(id);
+        }
     }
 }

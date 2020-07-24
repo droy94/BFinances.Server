@@ -75,5 +75,17 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
 
             return response;
         }
+
+        public async Task DeleteInvoice(long id)
+        {
+            var invoice = await _dbContext.Set<Invoice>()
+                .Include(x => x.Items)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            _dbContext.Set<Invoice>().Remove(invoice);
+
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }
