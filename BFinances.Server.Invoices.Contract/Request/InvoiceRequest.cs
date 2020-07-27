@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BFinances.Server.Invoices.Contract.Request
@@ -25,6 +26,6 @@ namespace BFinances.Server.Invoices.Contract.Request
 
         public int DueDays { get; set; }
 
-        public decimal NetSum { get; set; }
+        public decimal NetSum => Items.Sum(x => x.NetAmount);
     }
 }
