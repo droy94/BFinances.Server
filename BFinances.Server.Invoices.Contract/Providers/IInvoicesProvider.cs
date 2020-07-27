@@ -16,7 +16,5 @@ namespace BFinances.Server.Invoices.Contract.Providers
         Task<InvoiceResponse> Get(long id);
 
         Task DeleteInvoice(long id);
-
-        Task DeleteItem(long id);
     }
 }

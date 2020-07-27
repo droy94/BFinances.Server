@@ -47,11 +47,5 @@ namespace BFinances.Server.Invoices.Application.Controllers
         {
             return _invoicesProvider.DeleteInvoice(id);
         }
-
-        [HttpDelete("item/{id}")]
-        public Task DeleteItem(long id)
-        {
-            return _invoicesProvider.DeleteItem(id);
-        }
     }
 }
