@@ -37,15 +37,9 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
                 .ForMember(x => x.InvoiceId,
                     opts => opts.Ignore())
                 .ForMember(x => x.PkwiuId,
-                    opts => opts.MapFrom(y => 1))
+                    opts => opts.MapFrom(y => y.Pkwiu.Id))
                 .ForMember(x => x.Pkwiu,
                     opts => opts.Ignore());
-
-
-                // TODO: Zmienić na to jak zrobię porządek na GUI z PKWIU
-                //.ForMember(x => x.PkwiuId,
-                //opts => opts.MapFrom(y => y.Pkwiu.Id))
-
         }
 
         private string GetNumber(DateTime invoiceDate)
