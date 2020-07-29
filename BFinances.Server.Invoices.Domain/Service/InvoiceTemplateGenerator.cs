@@ -17,23 +17,24 @@ namespace BFinances.Server.Invoices.Domain.Service
                 <html>
 	                <head></head>
 	                <body>
-		                <div class='header'><h1>Wystawiono dnia {invoice.InvoiceDate.ToString()}</h1></div>
+		                <div><h1>Wystawiono dnia {invoice.InvoiceDate.ToString()}</h1></div>
 		                
 		                <div class='header'><h1>Faktura nr {invoice.InvoiceNo}</h1></div>
-		                <div class='header'><p>Data sprzedaży {invoice.SaleDate.ToShortDateString()}</p></div>
-		                <div class='header'><p>Termin płatności {invoice.DueDate.ToShortDateString()}</p></div>
+		                <div><p>Data sprzedaży {invoice.SaleDate.ToShortDateString()}</p></div>
+		                <div><p>Termin płatności {invoice.DueDate.ToShortDateString()}</p></div>
 		                
 		                <div class='header'><h1>Sprzedawca:</h1></div>
-		                <div class='header'><p>{invoice.FromContractor.Name}</p></div>
-		                <div class='header'><p>{invoice.FromContractor.Nip}</p></div>
-		                <div class='header'><p>Adres Mock</p></div>
+		                <div><p>{invoice.FromContractor.Name}</p></div>
+		                <div><p>{invoice.FromContractor.Nip}</p></div>
+		                <div><p>Adres Mock</p></div>
 		                
 		                <div class='header'><h1>Nabywca:</h1></div>
-		                <div class='header'><p>{invoice.ForContractor.Name}</p></div>
-		                <div class='header'><p>{invoice.ForContractor.Nip}</p></div>
-		                <div class='header'><p>Adres Mock</p></div>
+		                <div><p>{invoice.ForContractor.Name}</p></div>
+		                <div><p>{invoice.ForContractor.Nip}</p></div>
+		                <div><p>Adres Mock</p></div>
 
                         <div class='header'><h1>Pozycje:</h1></div>
+                        <table align='center'>
                             <tr>
                                 <th>Towar/usługa</th>
                                 <th>PKWiU</th>
@@ -52,7 +53,7 @@ namespace BFinances.Server.Invoices.Domain.Service
                 content.Append($@"
                 <tr>
                     <td>{item.ServiceName}</td>
-                    <td>{item.Pkwiu}</td>
+                    <td>{item.Pkwiu.Code}</td>
                     <td>{item.NumberOfUnits}</td>
                     <td>{item.UnitName}</td>
                     <td>{item.NetUnitAmount}</td>
@@ -65,26 +66,30 @@ namespace BFinances.Server.Invoices.Domain.Service
             }
 
             content.Append($@"
+                </table>
+
                 <div></div>
-                <div><h1>Podsumowanie</h1></div>
-                <tr>
-                    <th></th>
-                    <th>Netto</th>
-                    <th>VAT</th>
-                    <th>Brutto</th>
-                </tr>
-                <tr>
-                    <td>Razem</td>
-                    <td>{invoice.NetSum}</td>
-                    <td>{invoice.VatSum}</td>
-                    <td>{invoice.GrossSum}</td>
-                </tr>
-                <tr>
-                    <td>Zapłacono</td>
-                    <td></td>
-                    <td></td>
-                    <td>0,00 zł</td>
-                </tr>
+                <div class='header'><h1>Podsumowanie</h1></div>
+                <table align='center'>
+                    <tr>
+                        <th></th>
+                        <th>Netto</th>
+                        <th>VAT</th>
+                        <th>Brutto</th>
+                    </tr>
+                    <tr>
+                        <td>Razem</td>
+                        <td>{invoice.NetSum}</td>
+                        <td>{invoice.VatSum}</td>
+                        <td>{invoice.GrossSum}</td>
+                    </tr>
+                    <tr>
+                        <td>Zapłacono</td>
+                        <td></td>
+                        <td></td>
+                        <td>0,00 zł</td>
+                    </tr>
+                </table>
                 ");
 
             return content.ToString();
