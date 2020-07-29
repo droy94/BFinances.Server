@@ -24,6 +24,8 @@ CREATE TABLE [dbo].[Invoices](
 	[SaleDate] [datetime] NOT NULL,
 	[DueDays] [int] NULL,
 	[NetSum] [decimal](18, 0) NOT NULL,
+	[GrossSum] [decimal](18, 0) NOT NULL,
+	[VatSum] [decimal](18, 0) NOT NULL
 )
 GO
 
@@ -31,9 +33,12 @@ CREATE TABLE [dbo].[InvoiceItems](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[InvoiceId] [bigint] FOREIGN KEY REFERENCES Invoices(Id) NOT NULL,
 	[ServiceName] [varchar](500) NOT NULL,
-	[NetAmount] [decimal](18, 0) NOT NULL,
 	[VatPercent] [decimal](18, 0) NOT NULL,
 	[NumberOfUnits] [int] NOT NULL,
+	[NetUnitAmount] [decimal](18, 0) NOT NULL,
+	[VatAmountSum] [decimal](18, 0) NOT NULL,
+	[GrossSum] [decimal](18, 0) NOT NULL,
+	[NetSum] [decimal](18, 0) NOT NULL,
 	[UnitName] [varchar](20) NOT NULL,
 	[PkwiuId] [bigint] FOREIGN KEY REFERENCES Pkwiu(Id) NOT NULL
 )

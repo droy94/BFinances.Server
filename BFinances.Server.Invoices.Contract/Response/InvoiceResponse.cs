@@ -24,6 +24,8 @@ namespace BFinances.Server.Invoices.Contract.Response
 
         public int DueDays { get; set; }
 
+        public decimal VatSum { get; set; }
+
         public decimal NetSum { get; set; }
 
         public decimal GrossSum { get; set; }

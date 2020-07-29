@@ -14,7 +14,13 @@ namespace BFinances.Server.Invoices.Domain.Model
 
         public string ServiceName { get; set; }
 
-        public decimal NetAmount { get; set; }
+        public decimal NetUnitAmount { get; set; }
+
+        public decimal NetSum { get; set; }
+
+        public decimal VatAmountSum { get; set; }
+
+        public decimal GrossSum { get; set; }
 
         public decimal VatPercent { get; set; }
 

@@ -9,7 +9,6 @@
     <None Remove="appsettings.Development.json" />
     <None Remove="appsettings.json" />
     <None Remove="Scripts\001_InitDb.sql" />
-    <None Remove="Scripts\002_AddGrossSum.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +27,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Scripts\001_InitDb.sql" />
-    <EmbeddedResource Include="Scripts\002_AddGrossSum.sql" />
   </ItemGroup>
 
   <ItemGroup>

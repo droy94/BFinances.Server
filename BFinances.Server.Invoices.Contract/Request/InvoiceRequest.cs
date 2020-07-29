@@ -26,8 +26,10 @@ namespace BFinances.Server.Invoices.Contract.Request
 
         public int DueDays { get; set; }
 
-        public decimal NetSum => Items.Sum(x => x.NetAmount);
+        public decimal VatSum => Items.Sum(x => x.VatAmountSum);
 
-        public decimal GrossSum => NetSum + Items.Sum(x => x.NetAmount * x.VatPercent / 100);
+        public decimal NetSum => Items.Sum(x => x.NetSum);
+
+        public decimal GrossSum => NetSum + Items.Sum(x => x.VatAmountSum);
     }
 }

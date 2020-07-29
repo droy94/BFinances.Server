@@ -10,7 +10,13 @@ namespace BFinances.Server.Invoices.Contract.Request
 
         public string ServiceName { get; set; }
 
-        public decimal NetAmount { get; set; }
+        public decimal NetUnitAmount { get; set; }
+
+        public decimal NetSum => NetUnitAmount * NumberOfUnits;
+
+        public decimal VatAmountSum => NetSum * VatPercent / 100;
+
+        public decimal GrossSum => NetSum + VatAmountSum;
 
         public decimal VatPercent { get; set; }
 

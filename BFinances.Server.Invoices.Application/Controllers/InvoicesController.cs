@@ -55,7 +55,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         {
             var file = await _invoicePdfService.Generate(id);
 
-            return File(file, "application/pdf", $"faktura_{DateTime.Now.ToShortDateString()}.pdf");
+            return File(file, "application/pdf", "faktura");
         }
     }
 }
