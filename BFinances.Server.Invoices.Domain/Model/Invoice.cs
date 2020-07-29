@@ -28,5 +28,7 @@ namespace BFinances.Server.Invoices.Domain.Model
         public int DueDays { get; set; }
 
         public decimal NetSum { get; set; }
+
+        public decimal GrossSum { get; set; }
     }
 }
