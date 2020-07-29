@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
+using BFinances.Server.Invoices.Contract.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BFinances.Server.Invoices.Application.Controllers
@@ -12,10 +13,11 @@ namespace BFinances.Server.Invoices.Application.Controllers
     public class InvoicesController : ControllerBase
     {
         private readonly IInvoicesProvider _invoicesProvider;
-
-        public InvoicesController(IInvoicesProvider invoicesProvider)
+        private readonly IInvoicePdfService _invoicePdfService;
+        public InvoicesController(IInvoicesProvider invoicesProvider, IInvoicePdfService invoicePdfService)
         {
             _invoicesProvider = invoicesProvider;
+            _invoicePdfService = invoicePdfService;
         }
 
         [HttpGet]
@@ -46,6 +48,14 @@ namespace BFinances.Server.Invoices.Application.Controllers
         public Task DeleteInvoice(long id)
         {
             return _invoicesProvider.DeleteInvoice(id);
+        }
+
+        [HttpGet("generate/{id}")]
+        public async Task<IActionResult> GeneratePdf(long id)
+        {
+            var file = await _invoicePdfService.Generate(id);
+
+            return File(file, "application/pdf", $"faktura_{DateTime.Now.ToShortDateString()}.pdf");
         }
     }
 }

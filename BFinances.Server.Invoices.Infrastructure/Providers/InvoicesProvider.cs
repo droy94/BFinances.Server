@@ -32,6 +32,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
                 .Include(x => x.ForContractor)
                 .Include(x => x.Items)
                 .ThenInclude(x => x.Pkwiu)
+                .OrderByDescending(x => x.InvoiceDate)
                 .ToListAsync();
 
             var response = _mapper.Map<List<InvoiceResponse>>(invoices);

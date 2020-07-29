@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BFinances.Server.Invoices.Common\BFinances.Server.Invoices.Common.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
   </ItemGroup>
 
 </Project>

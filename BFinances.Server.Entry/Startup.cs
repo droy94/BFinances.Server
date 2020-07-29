@@ -6,6 +6,8 @@ using BFinances.Server.Invoices.Application.Controllers;
 using BFinances.Server.Invoices.Infrastructure.Autofac;
 using BFinances.Server.Invoices.Infrastructure.AutoMapper;
 using BFinances.Server.Invoices.Infrastructure.Repository;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
@@ -40,13 +42,11 @@ namespace BFinances.Server.Entry
                 options.UseSqlServer(Configuration.GetConnectionString("InvoicesDatabase")));
 
             var assembly = typeof(InvoicesController).Assembly;
+
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
             services.AddControllers()
                 .PartManager.ApplicationParts.Add(new AssemblyPart(assembly));
-
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Invoices API", Version = "v1" });
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
