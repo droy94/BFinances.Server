@@ -20,8 +20,8 @@ namespace BFinances.Server.Invoices.Domain.Service
 		                <div class='header'><h1>Wystawiono dnia {invoice.InvoiceDate.ToString()}</h1></div>
 		                
 		                <div class='header'><h1>Faktura nr {invoice.InvoiceNo}</h1></div>
-		                <div class='header'><p>Data sprzedaży {invoice.SaleDate.ToString()}</p></div>
-		                <div class='header'><p>Termin płatności {invoice.DueDate.ToString()}</p></div>
+		                <div class='header'><p>Data sprzedaży {invoice.SaleDate.ToShortDateString()}</p></div>
+		                <div class='header'><p>Termin płatności {invoice.DueDate.ToShortDateString()}</p></div>
 		                
 		                <div class='header'><h1>Sprzedawca:</h1></div>
 		                <div class='header'><p>{invoice.FromContractor.Name}</p></div>
@@ -35,23 +35,57 @@ namespace BFinances.Server.Invoices.Domain.Service
 
                         <div class='header'><h1>Pozycje:</h1></div>
                             <tr>
-<th></th>
-<th>Towar/usługa</th>
-<th>PKWiU</th>
-<th>Ilość</th>
-<th>Jedn.</th>
-<th>Cena jedn. netto</th>
-<th>Wartość netto</th>
-<th>Stawka VAT</th>
-</tr>
+                                <th>Towar/usługa</th>
+                                <th>PKWiU</th>
+                                <th>Ilość</th>
+                                <th>Jedn.</th>
+                                <th>Cena jedn. netto</th>
+                                <th>Wartość netto</th>
+                                <th>Wartość brutto</th>
+                                <th>Stawka VAT</th>
+                                <th>Kwota VAT</th>
+                            </tr>
             ");
 
             foreach (var item in invoice.Items)
             {
                 content.Append($@"
-                    
-            ");
+                <tr>
+                    <td>{item.ServiceName}</td>
+                    <td>{item.Pkwiu}</td>
+                    <td>{item.NumberOfUnits}</td>
+                    <td>{item.UnitName}</td>
+                    <td>{item.NetUnitAmount}</td>
+                    <td>{item.NetSum}</td>
+                    <td>{item.GrossSum}</td>
+                    <td>{item.VatPercent}%</td>
+                    <td>{item.VatAmountSum}</td>
+                </tr>
+                ");
             }
+
+            content.Append($@"
+                <div></div>
+                <div><h1>Podsumowanie</h1></div>
+                <tr>
+                    <th></th>
+                    <th>Netto</th>
+                    <th>VAT</th>
+                    <th>Brutto</th>
+                </tr>
+                <tr>
+                    <td>Razem</td>
+                    <td>{invoice.NetSum}</td>
+                    <td>{invoice.VatSum}</td>
+                    <td>{invoice.GrossSum}</td>
+                </tr>
+                <tr>
+                    <td>Zapłacono</td>
+                    <td></td>
+                    <td></td>
+                    <td>0,00 zł</td>
+                </tr>
+                ");
 
             return content.ToString();
         }
