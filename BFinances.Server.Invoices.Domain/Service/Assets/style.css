@@ -1,9 +1,29 @@
-﻿.header {
-    text-align: center;
-    color: grey;
-    padding-bottom: 35px;
+﻿table {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    padding: 10px;
 }
 
-table {
-    border: 1px solid black;
+td {
+    padding: 20px 0;
+    white-space: nowrap;
+}
+
+.left-div {
+    float: left;
+}
+
+.right-div {
+    margin-right: 200px;
+    float: right;
+    padding-top: 1px;
+}
+
+.clear {
+    clear: both;
+}
+
+#invoice-no {
+    margin-top: 20px;
 }

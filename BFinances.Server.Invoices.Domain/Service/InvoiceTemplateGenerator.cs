@@ -17,24 +17,34 @@ namespace BFinances.Server.Invoices.Domain.Service
                 <html>
 	                <head></head>
 	                <body>
-		                <div><h1>Wystawiono dnia {invoice.InvoiceDate.ToString()}</h1></div>
-		                
-		                <div class='header'><h1>Faktura nr {invoice.InvoiceNo}</h1></div>
-		                <div><p>Data sprzedaży {invoice.SaleDate.ToShortDateString()}</p></div>
-		                <div><p>Termin płatności {invoice.DueDate.ToShortDateString()}</p></div>
-		                
-		                <div class='header'><h1>Sprzedawca:</h1></div>
-		                <div><p>{invoice.FromContractor.Name}</p></div>
-		                <div><p>{invoice.FromContractor.Nip}</p></div>
-		                <div><p>Adres Mock</p></div>
-		                
-		                <div class='header'><h1>Nabywca:</h1></div>
-		                <div><p>{invoice.ForContractor.Name}</p></div>
-		                <div><p>{invoice.ForContractor.Nip}</p></div>
-		                <div><p>Adres Mock</p></div>
+		                <div><p>Wystawiono dnia {invoice.InvoiceDate.ToShortDateString()}</p></div>
 
-                        <div class='header'><h1>Pozycje:</h1></div>
-                        <table align='center'>
+                        <div>
+	                        <div id='invoice-no'>
+		                        <h1>Faktura nr {invoice.InvoiceNo}</h1>
+		                        <p>Data sprzedaży: {invoice.SaleDate.ToShortDateString()}</p>
+		                        <p>Termin płatności: {invoice.DueDate.ToShortDateString()}</p>
+	                        </div>
+
+                            <div>
+	                            <div class='left-div'>
+		                            <h1>Sprzedawca:</h1>
+		                            <p>{invoice.FromContractor.Name}</p>
+		                            <p>{invoice.FromContractor.Nip}</p>
+		                            <p>Adres Mock</p>
+	                            </div>
+
+	                            <div class='right-div'>
+		                            <h1>Nabywca:</h1>
+		                            <p>{invoice.ForContractor.Name}</p>
+		                            <p>{invoice.ForContractor.Nip}</p>
+		                            <p>Adres Mock</p>
+	                            </div>
+                            </div>
+                        </div>
+
+                        <div class='clear'><h1>Pozycje:</h1></div>
+                        <table>
                             <tr>
                                 <th>Towar/usługa</th>
                                 <th>PKWiU</th>
@@ -56,11 +66,11 @@ namespace BFinances.Server.Invoices.Domain.Service
                     <td>{item.Pkwiu.Code}</td>
                     <td>{item.NumberOfUnits}</td>
                     <td>{item.UnitName}</td>
-                    <td>{item.NetUnitAmount}</td>
-                    <td>{item.NetSum}</td>
-                    <td>{item.GrossSum}</td>
+                    <td>{item.NetUnitAmount:C}</td>
+                    <td>{item.NetSum:C}</td>
+                    <td>{item.GrossSum:C}</td>
                     <td>{item.VatPercent}%</td>
-                    <td>{item.VatAmountSum}</td>
+                    <td>{item.VatAmountSum:C}</td>
                 </tr>
                 ");
             }
@@ -69,8 +79,8 @@ namespace BFinances.Server.Invoices.Domain.Service
                 </table>
 
                 <div></div>
-                <div class='header'><h1>Podsumowanie</h1></div>
-                <table align='center'>
+                <div><h1>Podsumowanie</h1></div>
+                <table>
                     <tr>
                         <th></th>
                         <th>Netto</th>
@@ -79,9 +89,9 @@ namespace BFinances.Server.Invoices.Domain.Service
                     </tr>
                     <tr>
                         <td>Razem</td>
-                        <td>{invoice.NetSum}</td>
-                        <td>{invoice.VatSum}</td>
-                        <td>{invoice.GrossSum}</td>
+                        <td>{invoice.NetSum:C}</td>
+                        <td>{invoice.VatSum:C}</td>
+                        <td>{invoice.GrossSum:C}</td>
                     </tr>
                     <tr>
                         <td>Zapłacono</td>
