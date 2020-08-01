@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BFinances.Server.Invoices.Common.Model;
+using BFinances.Server.Common.Domain.Model;
 
 namespace BFinances.Server.Invoices.Domain.Model
 {

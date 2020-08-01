@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using BFinances.Server.Invoices.Common.Model;
+using BFinances.Server.Common.Domain.Model;
 using Microsoft.VisualBasic;
 
 namespace BFinances.Server.Invoices.Domain.Model

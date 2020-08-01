@@ -1,4 +1,4 @@
-﻿namespace BFinances.Server.Invoices.Common.Model
+﻿namespace BFinances.Server.Common.Domain.Model
 {
     public class Entity
     {
