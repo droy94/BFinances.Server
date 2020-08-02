@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using BFinances.Server.Common.Domain.Model;
 using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Response;
 using BFinances.Server.Invoices.Domain.Model;

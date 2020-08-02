@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using BFinances.Server.Common.Domain.Model;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
 using BFinances.Server.Invoices.Domain.Model;

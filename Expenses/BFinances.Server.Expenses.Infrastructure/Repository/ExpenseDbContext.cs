@@ -1,0 +1,28 @@
+﻿using BFinances.Server.Common.Domain.Model;
+using BFinances.Server.Expenses.Domain.Model;
+using Microsoft.EntityFrameworkCore;
+
+namespace BFinances.Server.Expenses.Infrastructure.Repository
+{
+    public class ExpenseDbContext : DbContext
+    {
+        public ExpenseDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<Expense> Expenses { get; set; }
+
+        public DbSet<Contractor> Contractors { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Expense>()
+                .ToTable("Expenses")
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Contractor>()
+                .ToTable("Contractors")
+                .HasKey(x => x.Id);
+        }
+    }
+}
