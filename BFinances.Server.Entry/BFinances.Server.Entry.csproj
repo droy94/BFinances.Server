@@ -26,6 +26,7 @@
     <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
     <ProjectReference Include="..\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj" />
     <ProjectReference Include="..\Common\BFinances.Server.Common.Infrastructure\BFinances.Server.Common.Infrastructure.csproj" />
+    <ProjectReference Include="..\Expenses\BFinances.Server.Expenses.Application\BFinances.Server.Expenses.Application.csproj" />
     <ProjectReference Include="..\Expenses\BFinances.Server.Expenses.Infrastructure\BFinances.Server.Expenses.Infrastructure.csproj" />
   </ItemGroup>
 

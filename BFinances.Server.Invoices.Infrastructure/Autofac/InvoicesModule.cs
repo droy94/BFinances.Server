@@ -25,6 +25,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
 
             builder.RegisterType<InvoiceTemplateGenerator>()
                 .As<IInvoiceTemplateGenerator>();
+
             builder.RegisterType<InvoicePdfService>()
                 .As<IInvoicePdfService>();
 

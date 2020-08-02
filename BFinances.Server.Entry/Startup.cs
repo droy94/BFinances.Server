@@ -4,6 +4,7 @@ using AutoMapper;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 using BFinances.Server.Common.Infrastructure.Autofac;
 using BFinances.Server.Common.Infrastructure.Repository;
+using BFinances.Server.Expenses.Application.Controllers;
 using BFinances.Server.Expenses.Infrastructure.Autofac;
 using BFinances.Server.Expenses.Infrastructure.Repository;
 using BFinances.Server.Invoices.Application.Controllers;
@@ -53,12 +54,16 @@ namespace BFinances.Server.Entry
             services.AddDbContext<CommonDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
 
-            var assembly = typeof(InvoicesController).Assembly;
+            var invoicesAssembly = typeof(InvoicesController).Assembly;
+            var expensesAssembly = typeof(ExpensesController).Assembly;
 
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             services.AddControllers()
-                .PartManager.ApplicationParts.Add(new AssemblyPart(assembly));
+                .PartManager.ApplicationParts.Add(new AssemblyPart(invoicesAssembly));
+
+            services.AddControllers()
+                .PartManager.ApplicationParts.Add(new AssemblyPart(expensesAssembly));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
