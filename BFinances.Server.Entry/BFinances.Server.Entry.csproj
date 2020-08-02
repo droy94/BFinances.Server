@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.1.2" />
+    <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="3.1.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
@@ -25,6 +25,7 @@
     <ProjectReference Include="..\BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj" />
     <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
     <ProjectReference Include="..\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj" />
+    <ProjectReference Include="..\Common\BFinances.Server.Common.Infrastructure\BFinances.Server.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\Expenses\BFinances.Server.Expenses.Infrastructure\BFinances.Server.Expenses.Infrastructure.csproj" />
   </ItemGroup>
 

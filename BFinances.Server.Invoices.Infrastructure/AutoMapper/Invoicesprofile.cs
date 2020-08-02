@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using BFinances.Server.Common.Contract.Request;
+using BFinances.Server.Common.Contract.Response;
 using BFinances.Server.Common.Domain.Model;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
@@ -12,11 +14,8 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
         public InvoicesProfile()
         {
             CreateMap<Invoice, InvoiceResponse>();
-            CreateMap<Contractor, ContractorResponse>();
             CreateMap<Pkwiu, PkwiuResponse>();
             CreateMap<InvoiceItem, InvoiceItemResponse>();
-
-            CreateMap<ContractorRequest, Contractor>();
             CreateMap<PkwiuRequest, Pkwiu>();
 
             // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity

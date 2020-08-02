@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BFinances.Server.Invoices.Contract.Response
+﻿namespace BFinances.Server.Common.Contract.Response
 {
     public class ContractorResponse
     {

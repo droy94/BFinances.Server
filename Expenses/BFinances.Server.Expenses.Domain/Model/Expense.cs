@@ -7,7 +7,7 @@ namespace BFinances.Server.Expenses.Domain.Model
 {
     public class Expense : Entity
     {
-        public string ExpenseeNo { get; set; }
+        public string ExpenseNo { get; set; }
 
         public long FromContractorId { get; set; }
 
@@ -20,8 +20,6 @@ namespace BFinances.Server.Expenses.Domain.Model
         public DateTime ExpenseDate { get; set; }
 
         public DateTime DueDate { get; set; }
-
-        public DateTime SaleDate { get; set; }
 
         public decimal VatSum { get; set; }
 

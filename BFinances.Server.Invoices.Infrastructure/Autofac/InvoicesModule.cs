@@ -15,19 +15,8 @@ namespace BFinances.Server.Invoices.Infrastructure.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //builder.RegisterType<InvoicesDbContext>()
-            //    .As<IInvoicesDbContext>()
-            //    .InstancePerLifetimeScope();
-
-            builder.RegisterType<InvoicesDbContext>()
-                .AsSelf();
-
             builder.RegisterType<InvoicesProvider>()
                 .As<IInvoicesProvider>()
-                .InstancePerLifetimeScope();
-
-            builder.RegisterType<ContractorProvider>()
-                .As<IContractorProvider>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<PkwiuProvider>()

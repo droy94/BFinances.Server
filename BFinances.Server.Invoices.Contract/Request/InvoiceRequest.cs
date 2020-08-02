@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BFinances.Server.Common.Contract.Request;
 
 namespace BFinances.Server.Invoices.Contract.Request
 {

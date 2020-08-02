@@ -7,7 +7,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Repository
 {
     public class InvoicesDbContext : DbContext, IInvoicesDbContext
     {
-        public InvoicesDbContext(DbContextOptions options) : base(options)
+        public InvoicesDbContext(DbContextOptions<InvoicesDbContext> options) : base(options)
         {
         }
 

@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace BFinances.DbUp
 {
-    class Program
+    internal class Program
     {
-        static int Main(string[] args)
+        private static int Main(string[] args)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -21,7 +21,7 @@ namespace BFinances.DbUp
 
             var configuration = builder.Build();
 
-            var connectionString = configuration.GetConnectionString("InvoicesDatabase");
+            var connectionString = configuration.GetConnectionString("BFinances");
 
             EnsureDatabase.For.SqlDatabase(connectionString);
 
@@ -36,7 +36,7 @@ namespace BFinances.DbUp
 
             if (!result.Successful)
             {
-                Console.ForegroundColor = ConsoleColor.Red; 
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(result.Error);
                 Console.ResetColor();
 #if DEBUG

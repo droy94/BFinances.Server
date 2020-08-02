@@ -13,10 +13,10 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
 {
     public class ExpenseProvider
     {
-        private readonly ExpenseDbContext _dbContext;
+        private readonly ExpensesDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public ExpenseProvider(ExpenseDbContext dbContext, IMapper mapper)
+        public ExpenseProvider(ExpensesDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

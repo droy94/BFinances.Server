@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BFinances.Server.Common.Contract.Response;
 
 namespace BFinances.Server.Invoices.Contract.Response
 {

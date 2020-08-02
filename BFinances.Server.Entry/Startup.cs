@@ -2,7 +2,10 @@
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
+using BFinances.Server.Common.Infrastructure.Autofac;
+using BFinances.Server.Common.Infrastructure.Repository;
 using BFinances.Server.Expenses.Infrastructure.Autofac;
+using BFinances.Server.Expenses.Infrastructure.Repository;
 using BFinances.Server.Invoices.Application.Controllers;
 using BFinances.Server.Invoices.Infrastructure.Autofac;
 using BFinances.Server.Invoices.Infrastructure.AutoMapper;
@@ -32,6 +35,7 @@ namespace BFinances.Server.Entry
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
+            builder.RegisterModule(new CommonModule());
             builder.RegisterModule(new InvoicesModule());
             builder.RegisterModule(new ExpensesModule());
         }
@@ -41,7 +45,13 @@ namespace BFinances.Server.Entry
             services.AddHttpClient();
 
             services.AddDbContext<InvoicesDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("InvoicesDatabase")));
+                options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
+
+            services.AddDbContext<ExpensesDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
+
+            services.AddDbContext<CommonDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
 
             var assembly = typeof(InvoicesController).Assembly;
 

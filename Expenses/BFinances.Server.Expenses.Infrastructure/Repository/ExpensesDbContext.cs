@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BFinances.Server.Expenses.Infrastructure.Repository
 {
-    public class ExpenseDbContext : DbContext
+    public class ExpensesDbContext : DbContext
     {
-        public ExpenseDbContext(DbContextOptions options) : base(options)
+        public ExpensesDbContext(DbContextOptions<ExpensesDbContext> options) : base(options)
         {
         }
 
