@@ -9,6 +9,8 @@ namespace BFinances.Server.Expenses.Contract.Response
     {
         public long Id { get; set; }
 
+        public string Name { get; set; }
+
         public string ExpenseNo { get; set; }
 
         public long FromContractorId { get; set; }
@@ -28,5 +30,7 @@ namespace BFinances.Server.Expenses.Contract.Response
         public decimal NetAmount { get; set; }
 
         public decimal GrossSum { get; set; }
+
+        public decimal VatPercent { get; set; }
     }
 }
