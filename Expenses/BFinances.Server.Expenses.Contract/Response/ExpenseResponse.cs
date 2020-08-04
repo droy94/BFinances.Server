@@ -29,7 +29,7 @@ namespace BFinances.Server.Expenses.Contract.Response
 
         public decimal NetAmount { get; set; }
 
-        public decimal GrossSum { get; set; }
+        public decimal GrossAmount { get; set; }
 
         public decimal VatPercent { get; set; }
     }

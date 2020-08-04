@@ -27,7 +27,7 @@ namespace BFinances.Server.Expenses.Domain.Model
 
         public decimal NetAmount { get; set; }
 
-        public decimal GrossSum { get; set; }
+        public decimal GrossAmount { get; set; }
 
         public decimal VatPercent { get; set; }
     }
