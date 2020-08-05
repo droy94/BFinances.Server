@@ -25,7 +25,7 @@ namespace BFinances.Server.Expenses.Contract.Request
 
         public DateTime DueDate { get; set; }
 
-        public decimal VatAmount { get; set; }
+        public decimal VatAmount => NetAmount * VatPercent / 100;
 
         public decimal NetAmount { get; set; }
 

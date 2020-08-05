@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using BFinances.Server.Expenses.Contract.Providers;
+using BFinances.Server.Expenses.Contract.Request;
 using BFinances.Server.Expenses.Contract.Response;
 using BFinances.Server.Expenses.Domain.Model;
 using BFinances.Server.Expenses.Infrastructure.Repository;
@@ -34,6 +35,15 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
             var response = _mapper.Map<List<ExpenseResponse>>(expenses);
 
             return response;
+        }
+
+        public async Task CreateExpense(ExpenseRequest expenseRequest)
+        {
+            var expense = _mapper.Map<Expense>(expenseRequest);
+
+            await _dbContext.Set<Expense>().AddAsync(expense);
+
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
