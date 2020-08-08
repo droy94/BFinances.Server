@@ -30,5 +30,23 @@ namespace BFinances.Server.Expenses.Application.Controllers
         {
             return _expensesProvider.CreateExpense(expense);
         }
+
+        [HttpPut("{id}")]
+        public Task EditExpense([FromBody]ExpenseRequest expense, long id)
+        {
+            return _expensesProvider.EditExpense(expense, id);
+        }
+
+        [HttpGet("{id}")]
+        public Task<ExpenseResponse> GetExpense(long id)
+        {
+            return _expensesProvider.Get(id);
+        }
+
+        [HttpDelete("{id}")]
+        public Task DeleteExpense(long id)
+        {
+            return _expensesProvider.DeleteExpense(id);
+        }
     }
 }

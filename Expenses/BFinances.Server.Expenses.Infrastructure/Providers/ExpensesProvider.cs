@@ -45,5 +45,40 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
 
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task EditExpense(ExpenseRequest expenseRequest, long id)
+        {
+            var expenseToEdit = await _dbContext.Set<Expense>()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            _mapper.Map(expenseRequest, expenseToEdit);
+
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<ExpenseResponse> Get(long id)
+        {
+            var expense = await _dbContext.Set<Expense>()
+                .Include(x => x.FromContractor)
+                .Include(x => x.ForContractor)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            var response = _mapper.Map<ExpenseResponse>(expense);
+
+            return response;
+        }
+
+        public async Task DeleteExpense(long id)
+        {
+            var expense = await _dbContext.Set<Expense>()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            _dbContext.Set<Expense>().Remove(expense);
+
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }
