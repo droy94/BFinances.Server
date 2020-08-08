@@ -21,9 +21,9 @@ namespace BFinances.Server.Expenses.Infrastructure.AutoMapper
                 .ForMember(x => x.ExpenseNo,
                     opts => opts.MapFrom(y => GetNumber(y.ExpenseDate)))
                 .ForMember(x => x.FromContractorId,
-                    opts => opts.MapFrom(y => 1))
+                    opts => opts.MapFrom(y => y.FromContractor.Id))
                 .ForMember(x => x.ForContractorId,
-                    opts => opts.MapFrom(y => y.ForContractor.Id))
+                    opts => opts.MapFrom(y => 1))
                 .ForMember(x => x.ForContractor,
                     opts => opts.Ignore())
                 .ForMember(x => x.FromContractor,
