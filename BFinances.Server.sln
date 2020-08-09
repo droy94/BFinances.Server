@@ -35,9 +35,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4E5B35
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Common.Domain", "Common\BFinances.Server.Common.Domain\BFinances.Server.Common.Domain.csproj", "{C6EF3C53-8C68-4DA9-AB58-900E5717A26E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Common.Contract", "Common\BFinances.Server.Common.Contract\BFinances.Server.Common.Contract.csproj", "{5C8FFAAF-2E29-4817-A5CB-F48DDFCABF19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Common.Contract", "Common\BFinances.Server.Common.Contract\BFinances.Server.Common.Contract.csproj", "{5C8FFAAF-2E29-4817-A5CB-F48DDFCABF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Common.Infrastructure", "Common\BFinances.Server.Common.Infrastructure\BFinances.Server.Common.Infrastructure.csproj", "{2AB50EE1-43DC-409D-9287-05564AC09EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Common.Infrastructure", "Common\BFinances.Server.Common.Infrastructure\BFinances.Server.Common.Infrastructure.csproj", "{2AB50EE1-43DC-409D-9287-05564AC09EA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard", "Dashboard", "{7AE4F437-66A9-479F-9441-589644E40241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Application", "Dashboard\BFinances.Server.Dashboard.Application\BFinances.Server.Dashboard.Application.csproj", "{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Contract", "Dashboard\BFinances.Server.Dashboard.Contract\BFinances.Server.Dashboard.Contract.csproj", "{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Domain", "Dashboard\BFinances.Server.Dashboard.Domain\BFinances.Server.Dashboard.Domain.csproj", "{52D5960E-A2C1-4549-8D37-5588852612D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Infrastructure", "Dashboard\BFinances.Server.Dashboard.Infrastructure\BFinances.Server.Dashboard.Infrastructure.csproj", "{531ABD62-32F9-4654-AD39-C9CCC61CA61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +115,22 @@ Global
 		{2AB50EE1-43DC-409D-9287-05564AC09EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB50EE1-43DC-409D-9287-05564AC09EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB50EE1-43DC-409D-9287-05564AC09EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D5960E-A2C1-4549-8D37-5588852612D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D5960E-A2C1-4549-8D37-5588852612D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D5960E-A2C1-4549-8D37-5588852612D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D5960E-A2C1-4549-8D37-5588852612D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531ABD62-32F9-4654-AD39-C9CCC61CA61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531ABD62-32F9-4654-AD39-C9CCC61CA61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531ABD62-32F9-4654-AD39-C9CCC61CA61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531ABD62-32F9-4654-AD39-C9CCC61CA61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +149,10 @@ Global
 		{C6EF3C53-8C68-4DA9-AB58-900E5717A26E} = {4E5B359D-4AE9-4858-97DD-F24136FD2C17}
 		{5C8FFAAF-2E29-4817-A5CB-F48DDFCABF19} = {4E5B359D-4AE9-4858-97DD-F24136FD2C17}
 		{2AB50EE1-43DC-409D-9287-05564AC09EA3} = {4E5B359D-4AE9-4858-97DD-F24136FD2C17}
+		{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5} = {7AE4F437-66A9-479F-9441-589644E40241}
+		{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8} = {7AE4F437-66A9-479F-9441-589644E40241}
+		{52D5960E-A2C1-4549-8D37-5588852612D7} = {7AE4F437-66A9-479F-9441-589644E40241}
+		{531ABD62-32F9-4654-AD39-C9CCC61CA61C} = {7AE4F437-66A9-479F-9441-589644E40241}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16CFA305-E92E-426A-808E-9147B96BC01B}
