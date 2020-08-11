@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BFinances.Server.Dashboard.Contract\BFinances.Server.Dashboard.Contract.csproj" />
+    <ProjectReference Include="..\BFinances.Server.Dashboard.Domain\BFinances.Server.Dashboard.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

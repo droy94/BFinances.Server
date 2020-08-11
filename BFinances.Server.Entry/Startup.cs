@@ -4,6 +4,8 @@ using AutoMapper;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 using BFinances.Server.Common.Infrastructure.Autofac;
 using BFinances.Server.Common.Infrastructure.Repository;
+using BFinances.Server.Dashboard.Application.Controllers;
+using BFinances.Server.Dashboard.Infrastructure.Autofac;
 using BFinances.Server.Expenses.Application.Controllers;
 using BFinances.Server.Expenses.Infrastructure.Autofac;
 using BFinances.Server.Expenses.Infrastructure.Repository;
@@ -39,6 +41,7 @@ namespace BFinances.Server.Entry
             builder.RegisterModule(new CommonModule());
             builder.RegisterModule(new InvoicesModule());
             builder.RegisterModule(new ExpensesModule());
+            builder.RegisterModule(new DashboardModule());
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -56,6 +59,7 @@ namespace BFinances.Server.Entry
 
             var invoicesAssembly = typeof(InvoicesController).Assembly;
             var expensesAssembly = typeof(ExpensesController).Assembly;
+            var dashboardAssembly = typeof(DashboardController).Assembly;
 
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 

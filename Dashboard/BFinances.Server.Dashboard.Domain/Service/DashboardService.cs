@@ -28,14 +28,28 @@ namespace BFinances.Server.Dashboard.Domain.Service
             var expenses = await _expensesProvider.GetAll();
             var invoices = await _invoicesProvider.GetAll();
 
+            // Przychód netto bez odliczeń
             var grossIncome = invoices.Sum(x => x.NetSum);
-            var incomeCosts = expenses.Sum(x => x.NetAmount);
-            var pit = grossIncome * PitPercent / 100;
-            var payablePit = (grossIncome - incomeCosts) * PitPercent;
-            var vat = invoices.Sum(x => x.VatSum);
-            //var payableVat = vat -
 
-            //var netIncome = grossIncome - (grossIncome - incomeCosts) * Pit / 100;
+            // Koszt uzyskania przychodu
+            var incomeCosts = expenses.Sum(x => x.NetAmount);
+
+            // Pit do zapłaty
+            var payablePit = (grossIncome - incomeCosts) * PitPercent;
+
+            var vat = invoices.Sum(x => x.VatSum);
+
+            // Vat do zapłaty
+            var payableVat = vat - expenses.Sum(x => x.VatAmount);
+
+            var dashboardResponse = new DashboardResponse
+            {
+                GrossIncome = grossIncome,
+                PayablePit = payablePit > 0 ? payablePit : 0,
+                PayableVat = payableVat > 0 ? payableVat : 0
+            };
+
+            return dashboardResponse;
         }
     }
 }
