@@ -24,9 +24,10 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
             _mapper = mapper;
         }
 
-        public async Task<List<ExpenseResponse>> GetAll()
+        public async Task<List<ExpenseResponse>> Get(int month, int year)
         {
             var expenses = await _dbContext.Set<Expense>()
+                .Where(x => x.ExpenseDate.Month == month && x.ExpenseDate.Year == year)
                 .Include(x => x.FromContractor)
                 .Include(x => x.ForContractor)
                 .OrderByDescending(x => x.ExpenseDate)

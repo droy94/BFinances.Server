@@ -9,7 +9,7 @@ namespace BFinances.Server.Expenses.Contract.Providers
 {
     public interface IExpensesProvider
     {
-        Task<List<ExpenseResponse>> GetAll();
+        Task<List<ExpenseResponse>> Get(int month, int year);
 
         Task CreateExpense(ExpenseRequest expenseRequest);
 

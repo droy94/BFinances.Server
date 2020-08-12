@@ -7,7 +7,7 @@ namespace BFinances.Server.Invoices.Contract.Providers
 {
     public interface IInvoicesProvider
     {
-        Task<List<InvoiceResponse>> GetAll();
+        Task<List<InvoiceResponse>> Get(int month, int year);
 
         Task CreateInvoice(InvoiceRequest invoiceRequest);
 

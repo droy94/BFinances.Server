@@ -20,9 +20,9 @@ namespace BFinances.Server.Expenses.Application.Controllers
         }
 
         [HttpGet]
-        public Task<List<ExpenseResponse>> GetAllExpenses()
+        public Task<List<ExpenseResponse>> GetExpenses([FromQuery] int month, [FromQuery] int year)
         {
-            return _expensesProvider.GetAll();
+            return _expensesProvider.Get(month, year);
         }
 
         [HttpPost]

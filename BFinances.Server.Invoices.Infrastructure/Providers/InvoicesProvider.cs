@@ -25,9 +25,10 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             _mapper = mapper;
         }
 
-        public async Task<List<InvoiceResponse>> GetAll()
+        public async Task<List<InvoiceResponse>> Get(int month, int year)
         {
             var invoices = await _dbContext.Set<Invoice>()
+                .Where(x => x.InvoiceDate.Month == month && x.InvoiceDate.Year == year)
                 .Include(x => x.FromContractor)
                 .Include(x => x.ForContractor)
                 .Include(x => x.Items)

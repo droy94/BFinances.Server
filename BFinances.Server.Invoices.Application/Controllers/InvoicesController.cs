@@ -14,6 +14,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
     {
         private readonly IInvoicesProvider _invoicesProvider;
         private readonly IInvoicePdfService _invoicePdfService;
+
         public InvoicesController(IInvoicesProvider invoicesProvider, IInvoicePdfService invoicePdfService)
         {
             _invoicesProvider = invoicesProvider;
@@ -21,9 +22,9 @@ namespace BFinances.Server.Invoices.Application.Controllers
         }
 
         [HttpGet]
-        public Task<List<InvoiceResponse>> GetAllInvoices()
+        public Task<List<InvoiceResponse>> GetInvoices([FromQuery] int month, [FromQuery] int year)
         {
-            return _invoicesProvider.GetAll();
+            return _invoicesProvider.Get(month, year);
         }
 
         [HttpPost]
