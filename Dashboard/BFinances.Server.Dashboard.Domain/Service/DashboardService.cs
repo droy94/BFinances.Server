@@ -28,8 +28,8 @@ namespace BFinances.Server.Dashboard.Domain.Service
             var lastMonth = DateTime.Today.AddMonths(-1);
             var today = DateTime.Today;
 
-            var expenses = await _expensesProvider.Get(lastMonth.Month, lastMonth.Year);
-            var invoices = await _invoicesProvider.Get(lastMonth.Month, lastMonth.Year);
+            var expenses = await _expensesProvider.GetExpenses(lastMonth.Month, lastMonth.Year);
+            var invoices = await _invoicesProvider.GetInvoices(lastMonth.Month, lastMonth.Year);
 
             // Przychód netto bez odliczeń
             var grossIncome = invoices.Sum(x => x.NetSum);

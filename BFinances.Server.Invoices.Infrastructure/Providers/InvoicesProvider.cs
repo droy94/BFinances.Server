@@ -25,7 +25,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             _mapper = mapper;
         }
 
-        public async Task<List<InvoiceResponse>> Get(int month, int year)
+        public async Task<List<InvoiceResponse>> GetInvoices(int month, int year)
         {
             var invoices = await _dbContext.Set<Invoice>()
                 .Where(x => x.InvoiceDate.Month == month && x.InvoiceDate.Year == year)
@@ -63,7 +63,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<InvoiceResponse> Get(long id)
+        public async Task<InvoiceResponse> GetInvoices(long id)
         {
             var invoice = await _dbContext.Set<Invoice>()
                 .Include(x => x.FromContractor)

@@ -9,13 +9,13 @@ namespace BFinances.Server.Expenses.Contract.Providers
 {
     public interface IExpensesProvider
     {
-        Task<List<ExpenseResponse>> Get(int month, int year);
+        Task<List<ExpenseResponse>> GetExpenses(int month, int year);
 
         Task CreateExpense(ExpenseRequest expenseRequest);
 
         Task EditExpense(ExpenseRequest expenseRequest, long id);
 
-        Task<ExpenseResponse> Get(long id);
+        Task<ExpenseResponse> GetExpenses(long id);
 
         Task DeleteExpense(long id);
     }

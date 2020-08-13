@@ -22,7 +22,7 @@ namespace BFinances.Server.Expenses.Application.Controllers
         [HttpGet]
         public Task<List<ExpenseResponse>> GetExpenses([FromQuery] int month, [FromQuery] int year)
         {
-            return _expensesProvider.Get(month, year);
+            return _expensesProvider.GetExpenses(month, year);
         }
 
         [HttpPost]
@@ -40,7 +40,7 @@ namespace BFinances.Server.Expenses.Application.Controllers
         [HttpGet("{id}")]
         public Task<ExpenseResponse> GetExpense(long id)
         {
-            return _expensesProvider.Get(id);
+            return _expensesProvider.GetExpenses(id);
         }
 
         [HttpDelete("{id}")]

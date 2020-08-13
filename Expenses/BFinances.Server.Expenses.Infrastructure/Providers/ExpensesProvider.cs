@@ -24,7 +24,7 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
             _mapper = mapper;
         }
 
-        public async Task<List<ExpenseResponse>> Get(int month, int year)
+        public async Task<List<ExpenseResponse>> GetExpenses(int month, int year)
         {
             var expenses = await _dbContext.Set<Expense>()
                 .Where(x => x.ExpenseDate.Month == month && x.ExpenseDate.Year == year)
@@ -58,7 +58,7 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<ExpenseResponse> Get(long id)
+        public async Task<ExpenseResponse> GetExpenses(long id)
         {
             var expense = await _dbContext.Set<Expense>()
                 .Include(x => x.FromContractor)

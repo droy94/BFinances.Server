@@ -24,7 +24,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         [HttpGet]
         public Task<List<InvoiceResponse>> GetInvoices([FromQuery] int month, [FromQuery] int year)
         {
-            return _invoicesProvider.Get(month, year);
+            return _invoicesProvider.GetInvoices(month, year);
         }
 
         [HttpPost]
@@ -42,7 +42,7 @@ namespace BFinances.Server.Invoices.Application.Controllers
         [HttpGet("{id}")]
         public Task<InvoiceResponse> GetInvoice(long id)
         {
-            return _invoicesProvider.Get(id);
+            return _invoicesProvider.GetInvoices(id);
         }
 
         [HttpDelete("{id}")]

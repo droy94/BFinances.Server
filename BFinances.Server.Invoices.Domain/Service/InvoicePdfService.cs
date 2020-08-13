@@ -30,7 +30,7 @@ namespace BFinances.Server.Invoices.Domain.Service
 
         public async Task<byte[]> Generate(long invoiceId)
         {
-            var invoice = await _invoicesProvider.Get(invoiceId);
+            var invoice = await _invoicesProvider.GetInvoices(invoiceId);
 
             var globalSettings = new GlobalSettings
             {
