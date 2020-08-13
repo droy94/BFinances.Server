@@ -25,10 +25,11 @@ namespace BFinances.Server.Dashboard.Domain.Service
 
         public async Task<DashboardResponse> Get()
         {
+            var lastMonth = DateTime.Today.AddMonths(-1);
             var today = DateTime.Today;
 
-            var expenses = await _expensesProvider.Get(today.Month, today.Year);
-            var invoices = await _invoicesProvider.Get(today.Month, today.Year);
+            var expenses = await _expensesProvider.Get(lastMonth.Month, lastMonth.Year);
+            var invoices = await _invoicesProvider.Get(lastMonth.Month, lastMonth.Year);
 
             // Przychód netto bez odliczeń
             var grossIncome = invoices.Sum(x => x.NetSum);
@@ -48,7 +49,11 @@ namespace BFinances.Server.Dashboard.Domain.Service
             {
                 GrossIncome = grossIncome,
                 PayablePit = payablePit > 0 ? payablePit : 0,
-                PayableVat = payableVat > 0 ? payableVat : 0
+                PayableVat = payableVat > 0 ? payableVat : 0,
+                StartOfSettlingPeriod = new DateTime(lastMonth.Year, lastMonth.Month, 1),
+                EndOfSettlingPeriod = new DateTime(lastMonth.Year, lastMonth.Month, DateTime.DaysInMonth(lastMonth.Year, lastMonth.Month)),
+                VatSettlementDate = new DateTime(today.Year, today.Month, 25),
+                PitSettlementDate = new DateTime(today.Year, today.Month, 20)
             };
 
             return dashboardResponse;
