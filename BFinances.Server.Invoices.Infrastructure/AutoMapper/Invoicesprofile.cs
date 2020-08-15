@@ -23,7 +23,7 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
                 .ForMember(x => x.Id,
                     opts => opts.Ignore())
                 .ForMember(x => x.InvoiceNo,
-                    opts => opts.MapFrom(y => GetNumber(y.InvoiceDate)))
+                    opts => opts.Ignore())
                 .ForMember(x => x.FromContractorId,
                     opts => opts.MapFrom(y => 1))
                 .ForMember(x => x.ForContractorId,

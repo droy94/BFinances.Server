@@ -31,14 +31,16 @@ namespace BFinances.Server.Invoices.Domain.Service
 		                            <h1>Sprzedawca:</h1>
 		                            <p>{invoice.FromContractor.Name}</p>
 		                            <p>{invoice.FromContractor.Nip}</p>
-		                            <p>Adres Mock</p>
+		                            <p>Jana Pawła II</p>
+                                    <p>01-295 Warszawa</p>
 	                            </div>
 
 	                            <div class='right-div'>
 		                            <h1>Nabywca:</h1>
 		                            <p>{invoice.ForContractor.Name}</p>
 		                            <p>{invoice.ForContractor.Nip}</p>
-		                            <p>Adres Mock</p>
+		                            <p>Ordona 35</p>
+                                    <p>01-321 Warszawa</p>
 	                            </div>
                             </div>
                         </div>

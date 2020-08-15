@@ -45,6 +45,10 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
         {
             var invoice = _mapper.Map<Invoice>(invoiceRequest);
 
+            var countOfInvoices = (await GetInvoices(invoice.InvoiceDate.Month, invoice.InvoiceDate.Year)).Count;
+
+            invoice.InvoiceNo = $"{countOfInvoices + 1}/{invoice.InvoiceDate.Month}/{invoice.InvoiceDate.Year}";
+
             await _dbContext.Set<Invoice>().AddAsync(invoice);
 
             await _dbContext.SaveChangesAsync();
