@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Common", "BFinances.Server.Invoices.Common\BFinances.Server.Invoices.Common.csproj", "{137560CC-709C-4F6A-A4DA-5A0E7654BEFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.DbUp", "BFinances.DbUp\BFinances.DbUp.csproj", "{710705A2-8226-4D72-A723-32025E4F8769}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.DbUp", "BFinances.Server.DbUp\BFinances.Server.DbUp.csproj", "{710705A2-8226-4D72-A723-32025E4F8769}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Expenses", "Expenses", "{8D606129-D295-48FE-933D-262F82756165}"
 EndProject
@@ -41,13 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Common.Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard", "Dashboard", "{7AE4F437-66A9-479F-9441-589644E40241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Application", "Dashboard\BFinances.Server.Dashboard.Application\BFinances.Server.Dashboard.Application.csproj", "{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Dashboard.Application", "Dashboard\BFinances.Server.Dashboard.Application\BFinances.Server.Dashboard.Application.csproj", "{A2ADB17A-FAEC-4C63-80B2-090BE45B8FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Contract", "Dashboard\BFinances.Server.Dashboard.Contract\BFinances.Server.Dashboard.Contract.csproj", "{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Dashboard.Contract", "Dashboard\BFinances.Server.Dashboard.Contract\BFinances.Server.Dashboard.Contract.csproj", "{5FD4DDA7-11C0-48B9-B049-9EC9C05DC4E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Domain", "Dashboard\BFinances.Server.Dashboard.Domain\BFinances.Server.Dashboard.Domain.csproj", "{52D5960E-A2C1-4549-8D37-5588852612D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Dashboard.Domain", "Dashboard\BFinances.Server.Dashboard.Domain\BFinances.Server.Dashboard.Domain.csproj", "{52D5960E-A2C1-4549-8D37-5588852612D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFinances.Server.Dashboard.Infrastructure", "Dashboard\BFinances.Server.Dashboard.Infrastructure\BFinances.Server.Dashboard.Infrastructure.csproj", "{531ABD62-32F9-4654-AD39-C9CCC61CA61C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Dashboard.Infrastructure", "Dashboard\BFinances.Server.Dashboard.Infrastructure\BFinances.Server.Dashboard.Infrastructure.csproj", "{531ABD62-32F9-4654-AD39-C9CCC61CA61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
