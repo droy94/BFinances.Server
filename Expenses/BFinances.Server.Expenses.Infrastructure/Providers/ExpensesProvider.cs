@@ -42,8 +42,11 @@ namespace BFinances.Server.Expenses.Infrastructure.Providers
         {
             var expense = _mapper.Map<Expense>(expenseRequest);
 
-            await _dbContext.Set<Expense>().AddAsync(expense);
+            var countOfExpenses = (await GetExpenses(expense.ExpenseDate.Month, expense.ExpenseDate.Year)).Count;
 
+            expense.ExpenseNo = $"{countOfExpenses + 1}/{expense.ExpenseDate.Month}/{expense.ExpenseDate.Year}";
+
+            await _dbContext.Set<Expense>().AddAsync(expense);
             await _dbContext.SaveChangesAsync();
         }
 
