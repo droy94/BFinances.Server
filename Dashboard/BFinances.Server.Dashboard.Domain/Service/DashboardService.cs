@@ -38,7 +38,7 @@ namespace BFinances.Server.Dashboard.Domain.Service
             var incomeCosts = expenses.Sum(x => x.NetAmount);
 
             // Pit do zapłaty
-            var payablePit = (grossIncome - incomeCosts) * PitPercent;
+            var payablePit = (grossIncome - incomeCosts) * PitPercent / 100;
 
             var vat = invoices.Sum(x => x.VatSum);
 
