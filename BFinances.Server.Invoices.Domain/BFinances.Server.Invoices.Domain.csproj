@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BFinances.Server.Invoices.Common\BFinances.Server.Invoices.Common.csproj" />
     <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
     <ProjectReference Include="..\Common\BFinances.Server.Common.Domain\BFinances.Server.Common.Domain.csproj" />
   </ItemGroup>

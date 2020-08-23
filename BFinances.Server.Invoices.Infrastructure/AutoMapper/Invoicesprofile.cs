@@ -18,7 +18,6 @@ namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
             CreateMap<InvoiceItem, InvoiceItemResponse>();
             CreateMap<PkwiuRequest, Pkwiu>();
 
-            // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity
             CreateMap<InvoiceRequest, Invoice>()
                 .ForMember(x => x.Id,
                     opts => opts.Ignore())

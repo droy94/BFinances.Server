@@ -14,7 +14,6 @@ namespace BFinances.Server.Expenses.Infrastructure.AutoMapper
         {
             CreateMap<Expense, ExpenseResponse>();
 
-            // TODO: number będzie numerem fv w miesiącu, a fromContractor będzie z identity
             CreateMap<ExpenseRequest, Expense>()
                 .ForMember(x => x.Id,
                     opts => opts.Ignore())

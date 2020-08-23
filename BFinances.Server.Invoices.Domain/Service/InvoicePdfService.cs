@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using BFinances.Server.Invoices.Contract.Providers;
+﻿using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Service;
-using BFinances.Server.Invoices.Domain.Model;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using System.Threading.Tasks;
 
 namespace BFinances.Server.Invoices.Domain.Service
 {

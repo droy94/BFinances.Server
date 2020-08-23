@@ -16,7 +16,6 @@ namespace BFinances.Server.Dashboard.Domain.Service
         private readonly IInvoicesProvider _invoicesProvider;
         private decimal PitPercent => 18m;
 
-        // TODO: Add DateTime filter
         public DashboardService(IExpensesProvider expensesProvider, IInvoicesProvider invoicesProvider)
         {
             _expensesProvider = expensesProvider;
