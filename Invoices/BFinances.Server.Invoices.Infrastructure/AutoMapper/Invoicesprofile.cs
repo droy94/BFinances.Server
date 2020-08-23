@@ -1,11 +1,8 @@
-﻿using System;
-using AutoMapper;
-using BFinances.Server.Common.Contract.Request;
-using BFinances.Server.Common.Contract.Response;
-using BFinances.Server.Common.Domain.Model;
+﻿using AutoMapper;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
 using BFinances.Server.Invoices.Domain.Model;
+using System;
 
 namespace BFinances.Server.Invoices.Infrastructure.AutoMapper
 {

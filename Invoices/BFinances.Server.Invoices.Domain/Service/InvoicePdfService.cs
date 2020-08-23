@@ -42,7 +42,7 @@ namespace BFinances.Server.Invoices.Domain.Service
                 WebSettings =
                 {
                     DefaultEncoding = "utf-8",
-                    UserStyleSheet = "C:\\ThesisRepo\\BFinances.Server\\BFinances.Server.Invoices.Domain\\Service\\Assets\\style.css"
+                    UserStyleSheet = "C:\\ThesisRepo\\BFinances.Server\\Invoices\\BFinances.Server.Invoices.Domain\\Service\\Assets\\style.css"
                 },
                 FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Strona [page] z [toPage]" }
             };

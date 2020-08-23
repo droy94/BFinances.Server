@@ -1,7 +1,5 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using AutoMapper;
-using AutoMapper.Contrib.Autofac.DependencyInjection;
 using BFinances.Server.Common.Infrastructure.Autofac;
 using BFinances.Server.Common.Infrastructure.Repository;
 using BFinances.Server.Dashboard.Application.Controllers;
@@ -11,7 +9,6 @@ using BFinances.Server.Expenses.Infrastructure.Autofac;
 using BFinances.Server.Expenses.Infrastructure.Repository;
 using BFinances.Server.Invoices.Application.Controllers;
 using BFinances.Server.Invoices.Infrastructure.Autofac;
-using BFinances.Server.Invoices.Infrastructure.AutoMapper;
 using BFinances.Server.Invoices.Infrastructure.Repository;
 using DinkToPdf;
 using DinkToPdf.Contracts;
@@ -92,14 +89,6 @@ namespace BFinances.Server.Entry
             {
                 endpoints.MapControllers();
             });
-
-            //app.UseSwagger();
-
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //    c.RoutePrefix = string.Empty;
-            //});
         }
     }
 }

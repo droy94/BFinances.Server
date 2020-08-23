@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
     <ProjectReference Include="..\..\Expenses\BFinances.Server.Expenses.Contract\BFinances.Server.Expenses.Contract.csproj" />
+    <ProjectReference Include="..\..\Invoices\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
     <ProjectReference Include="..\BFinances.Server.Dashboard.Contract\BFinances.Server.Dashboard.Contract.csproj" />
   </ItemGroup>
 

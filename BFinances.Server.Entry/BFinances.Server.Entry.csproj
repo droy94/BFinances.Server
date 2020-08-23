@@ -22,14 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj" />
-    <ProjectReference Include="..\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj" />
-    <ProjectReference Include="..\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj" />
     <ProjectReference Include="..\Common\BFinances.Server.Common.Infrastructure\BFinances.Server.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\Dashboard\BFinances.Server.Dashboard.Application\BFinances.Server.Dashboard.Application.csproj" />
     <ProjectReference Include="..\Dashboard\BFinances.Server.Dashboard.Infrastructure\BFinances.Server.Dashboard.Infrastructure.csproj" />
     <ProjectReference Include="..\Expenses\BFinances.Server.Expenses.Application\BFinances.Server.Expenses.Application.csproj" />
     <ProjectReference Include="..\Expenses\BFinances.Server.Expenses.Infrastructure\BFinances.Server.Expenses.Infrastructure.csproj" />
+    <ProjectReference Include="..\Invoices\BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj" />
+    <ProjectReference Include="..\Invoices\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

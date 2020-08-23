@@ -8,7 +8,6 @@ namespace BFinances.Server.Invoices.Contract.Request
 {
     public class InvoiceRequest
     {
-        // Czy tu są elementy czy id-ki zależy od działania GUI. Zrobić kawałek GUI i pewnie się okaże
         public long Id { get; set; }
 
         public List<InvoiceItemRequest> Items { get; set; }

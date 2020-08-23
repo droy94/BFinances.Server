@@ -4,8 +4,6 @@ using System.Text;
 using System.Threading.Tasks;
 using BFinances.Server.Common.Contract.Providers;
 using BFinances.Server.Common.Contract.Response;
-using BFinances.Server.Invoices.Contract.Providers;
-using BFinances.Server.Invoices.Contract.Response;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BFinances.Server.Invoices.Application.Controllers

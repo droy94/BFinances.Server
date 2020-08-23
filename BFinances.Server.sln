@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Entry", "BFinances.Server.Entry\BFinances.Server.Entry.csproj", "{DAF02D43-8FE4-4DF4-B1A3-CE466E10C15D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Invoices", "Invoices", "{FD16312E-F5F6-45B9-AAC1-9384DF14403C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Invoices", "Invoices", "{F9AF0541-41ED-42F4-8953-6BF5E39664AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Contract", "BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj", "{51BB42D8-9F62-4382-91F3-924441B5504C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Contract", "Invoices\BFinances.Server.Invoices.Contract\BFinances.Server.Invoices.Contract.csproj", "{51BB42D8-9F62-4382-91F3-924441B5504C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Infrastructure", "BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj", "{F086C6FB-BFAD-4311-9114-F8EED2E287D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Infrastructure", "Invoices\BFinances.Server.Invoices.Infrastructure\BFinances.Server.Invoices.Infrastructure.csproj", "{F086C6FB-BFAD-4311-9114-F8EED2E287D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Domain", "BFinances.Server.Invoices.Domain\BFinances.Server.Invoices.Domain.csproj", "{BFAB4F1E-8582-4C6B-9AFE-39F11FA5F613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Domain", "Invoices\BFinances.Server.Invoices.Domain\BFinances.Server.Invoices.Domain.csproj", "{BFAB4F1E-8582-4C6B-9AFE-39F11FA5F613}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Application", "BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj", "{5AA9D7F5-1A33-4517-9CCF-19DB1DFD6A25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.Invoices.Application", "Invoices\BFinances.Server.Invoices.Application\BFinances.Server.Invoices.Application.csproj", "{5AA9D7F5-1A33-4517-9CCF-19DB1DFD6A25}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BFinances.Server.DbUp", "BFinances.Server.DbUp\BFinances.Server.DbUp.csproj", "{710705A2-8226-4D72-A723-32025E4F8769}"
 EndProject
@@ -124,10 +124,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{51BB42D8-9F62-4382-91F3-924441B5504C} = {FD16312E-F5F6-45B9-AAC1-9384DF14403C}
-		{F086C6FB-BFAD-4311-9114-F8EED2E287D3} = {FD16312E-F5F6-45B9-AAC1-9384DF14403C}
-		{BFAB4F1E-8582-4C6B-9AFE-39F11FA5F613} = {FD16312E-F5F6-45B9-AAC1-9384DF14403C}
-		{5AA9D7F5-1A33-4517-9CCF-19DB1DFD6A25} = {FD16312E-F5F6-45B9-AAC1-9384DF14403C}
+		{51BB42D8-9F62-4382-91F3-924441B5504C} = {F9AF0541-41ED-42F4-8953-6BF5E39664AF}
+		{F086C6FB-BFAD-4311-9114-F8EED2E287D3} = {F9AF0541-41ED-42F4-8953-6BF5E39664AF}
+		{BFAB4F1E-8582-4C6B-9AFE-39F11FA5F613} = {F9AF0541-41ED-42F4-8953-6BF5E39664AF}
+		{5AA9D7F5-1A33-4517-9CCF-19DB1DFD6A25} = {F9AF0541-41ED-42F4-8953-6BF5E39664AF}
 		{7B96793C-B932-4C5C-825F-90EC2ABD46F5} = {8D606129-D295-48FE-933D-262F82756165}
 		{FF2441E2-B321-4747-B562-94FEEE9EED67} = {8D606129-D295-48FE-933D-262F82756165}
 		{E095BC0E-7947-49FA-A04A-4CCB4FDD5336} = {8D606129-D295-48FE-933D-262F82756165}

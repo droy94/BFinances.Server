@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BFinances.Server.Dashboard.Contract.Response;
+﻿using BFinances.Server.Dashboard.Contract.Response;
 using BFinances.Server.Dashboard.Contract.Service;
 using BFinances.Server.Expenses.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Providers;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BFinances.Server.Dashboard.Domain.Service
 {
