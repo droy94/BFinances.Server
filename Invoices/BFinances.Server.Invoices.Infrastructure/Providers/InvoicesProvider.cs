@@ -8,11 +8,9 @@ using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Request;
 using BFinances.Server.Invoices.Contract.Response;
 using Microsoft.EntityFrameworkCore;
-using Mapper = AutoMapper.Mapper;
 
 namespace BFinances.Server.Invoices.Infrastructure.Providers
 {
-    // TODO: Wydzielić z tego serwis i dodać repository jak w pracy
     public class InvoicesProvider : IInvoicesProvider
     {
         private readonly InvoicesDbContext _dbContext;
@@ -25,7 +23,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             _mapper = mapper;
         }
 
-        public async Task<List<InvoiceResponse>> GetInvoices(int month, int year)
+        public async Task<List<InvoiceResponse>> GetInvoice(int month, int year)
         {
             var invoices = await _dbContext.Set<Invoice>()
                 .Where(x => x.InvoiceDate.Month == month && x.InvoiceDate.Year == year)
@@ -45,7 +43,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
         {
             var invoice = _mapper.Map<Invoice>(invoiceRequest);
 
-            var countOfInvoices = (await GetInvoices(invoice.InvoiceDate.Month, invoice.InvoiceDate.Year)).Count;
+            var countOfInvoices = (await GetInvoice(invoice.InvoiceDate.Month, invoice.InvoiceDate.Year)).Count;
 
             invoice.InvoiceNo = $"{countOfInvoices + 1}/{invoice.InvoiceDate.Month}/{invoice.InvoiceDate.Year}";
 
@@ -67,7 +65,7 @@ namespace BFinances.Server.Invoices.Infrastructure.Providers
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<InvoiceResponse> GetInvoices(long id)
+        public async Task<InvoiceResponse> GetInvoice(long id)
         {
             var invoice = await _dbContext.Set<Invoice>()
                 .Include(x => x.FromContractor)

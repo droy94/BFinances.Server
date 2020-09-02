@@ -24,7 +24,7 @@ namespace BFinances.Server.Invoices.Domain.Service
 
         public async Task<byte[]> Generate(long invoiceId)
         {
-            var invoice = await _invoicesProvider.GetInvoices(invoiceId);
+            var invoice = await _invoicesProvider.GetInvoice(invoiceId);
 
             var globalSettings = new GlobalSettings
             {

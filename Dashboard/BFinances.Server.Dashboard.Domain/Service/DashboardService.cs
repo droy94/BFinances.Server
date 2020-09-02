@@ -26,7 +26,7 @@ namespace BFinances.Server.Dashboard.Domain.Service
             var today = DateTime.Today;
 
             var expenses = await _expensesProvider.GetExpenses(lastMonth.Month, lastMonth.Year);
-            var invoices = await _invoicesProvider.GetInvoices(lastMonth.Month, lastMonth.Year);
+            var invoices = await _invoicesProvider.GetInvoice(lastMonth.Month, lastMonth.Year);
 
             // Przychód netto bez odliczeń
             var grossIncome = invoices.Sum(x => x.NetSum);

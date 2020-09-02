@@ -1,14 +1,11 @@
-﻿using BFinances.Server.Invoices.Contract.Service;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using BFinances.Server.Invoices.Contract.Providers;
+﻿using BFinances.Server.Invoices.Contract.Providers;
 using BFinances.Server.Invoices.Contract.Response;
+using BFinances.Server.Invoices.Contract.Service;
 using BFinances.Server.Invoices.Domain.Service;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using Moq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace BFinances.Server.Invoices.Domain.Unit.Tests.Service
@@ -31,7 +28,7 @@ namespace BFinances.Server.Invoices.Domain.Unit.Tests.Service
 
             // Assert
             templateGeneratorMock.Verify(mock => mock.GetContent(It.IsAny<InvoiceResponse>()), Times.Once);
-            invoicesProviderMock.Verify(mock => mock.GetInvoices(It.IsAny<long>()), Times.Once);
+            invoicesProviderMock.Verify(mock => mock.GetInvoice(It.IsAny<long>()), Times.Once);
             pdfConverterMock.Verify(mock => mock.Convert(It.IsAny<HtmlToPdfDocument>()), Times.Once);
         }
     }
