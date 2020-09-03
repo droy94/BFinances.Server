@@ -1,6 +1,6 @@
-﻿namespace BFinances.Server.Common.Contract.Request
+﻿namespace BFinances.Server.Contractors.Contract.Response
 {
-    public class ContractorRequest
+    public class ContractorResponse
     {
         public long Id { get; set; }
 

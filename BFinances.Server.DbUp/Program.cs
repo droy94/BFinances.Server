@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using DbUp;
 using DbUp.Engine;
-using DbUp.Helpers;
 using Microsoft.Extensions.Configuration;
 
-namespace BFinances.DbUp
+namespace BFinances.Server.DbUp
 {
     internal class Program
     {

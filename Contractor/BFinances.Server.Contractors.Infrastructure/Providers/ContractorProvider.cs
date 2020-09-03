@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using BFinances.Server.Common.Contract.Providers;
-using BFinances.Server.Common.Contract.Response;
-using BFinances.Server.Common.Domain.Model;
-using BFinances.Server.Common.Infrastructure.Repository;
+using BFinances.Server.Contractors.Contract.Providers;
+using BFinances.Server.Contractors.Contract.Response;
+using BFinances.Server.Contractors.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace BFinances.Server.Common.Infrastructure.Providers
+namespace BFinances.Server.Contractors.Infrastructure.Providers
 {
     public class ContractorProvider : IContractorProvider
     {
-        private readonly CommonDbContext _dbContext;
+        private readonly ContractorDbContext _dbContext;
 
         private readonly IMapper _mapper;
 
-        public ContractorProvider(CommonDbContext dbContext, IMapper mapper)
+        public ContractorProvider(ContractorDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -23,7 +22,7 @@ namespace BFinances.Server.Common.Infrastructure.Providers
 
         public async Task<List<ContractorResponse>> GetAll()
         {
-            var contractors = await _dbContext.Set<Contractor>()
+            var contractors = await _dbContext.Set<Domain.Model.Contractor>()
                 .ToListAsync();
 
             var response = _mapper.Map<List<ContractorResponse>>(contractors);

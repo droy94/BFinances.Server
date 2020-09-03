@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using BFinances.Server.Common.Infrastructure.Autofac;
-using BFinances.Server.Common.Infrastructure.Repository;
+using BFinances.Server.Contractors.Infrastructure.Autofac;
+using BFinances.Server.Contractors.Infrastructure.Repository;
 using BFinances.Server.Dashboard.Application.Controllers;
 using BFinances.Server.Dashboard.Infrastructure.Autofac;
 using BFinances.Server.Expenses.Application.Controllers;
@@ -35,7 +35,7 @@ namespace BFinances.Server.Entry
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule(new CommonModule());
+            builder.RegisterModule(new ContractorModule());
             builder.RegisterModule(new InvoicesModule());
             builder.RegisterModule(new ExpensesModule());
             builder.RegisterModule(new DashboardModule());
@@ -51,7 +51,7 @@ namespace BFinances.Server.Entry
             services.AddDbContext<ExpensesDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
 
-            services.AddDbContext<CommonDbContext>(options =>
+            services.AddDbContext<ContractorDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BFinances")));
 
             var invoicesAssembly = typeof(InvoicesController).Assembly;

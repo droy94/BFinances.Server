@@ -1,4 +1,6 @@
-﻿namespace BFinances.Server.Common.Domain.Model
+﻿using BFinances.Server.Common.Domain.Model;
+
+namespace BFinances.Server.Contractors.Domain.Model
 {
     public class Contractor : Entity
     {

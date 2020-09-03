@@ -1,4 +1,5 @@
 ﻿using BFinances.Server.Common.Domain.Model;
+using BFinances.Server.Contractors.Domain.Model;
 using BFinances.Server.Invoices.Domain.Model;
 using BFinances.Server.Invoices.Domain.Repository;
 using Microsoft.EntityFrameworkCore;

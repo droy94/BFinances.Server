@@ -1,10 +1,10 @@
 ﻿using BFinances.Server.Dashboard.Contract.Response;
 using BFinances.Server.Dashboard.Contract.Service;
 using BFinances.Server.Expenses.Contract.Providers;
-using BFinances.Server.Invoices.Contract.Providers;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using BFinances.Server.Invoices.Contract.Providers;
 
 namespace BFinances.Server.Dashboard.Domain.Service
 {

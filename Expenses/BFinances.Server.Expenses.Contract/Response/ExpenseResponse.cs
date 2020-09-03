@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BFinances.Server.Common.Contract.Response;
+using BFinances.Server.Contractors.Contract.Response;
 
 namespace BFinances.Server.Expenses.Contract.Response
 {

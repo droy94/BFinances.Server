@@ -1,4 +1,5 @@
 ﻿using BFinances.Server.Common.Domain.Model;
+using BFinances.Server.Contractors.Domain.Model;
 using BFinances.Server.Expenses.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 

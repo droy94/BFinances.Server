@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using BFinances.Server.Common.Contract.Response;
+using BFinances.Server.Contractors.Contract.Response;
 
-namespace BFinances.Server.Common.Contract.Providers
+namespace BFinances.Server.Contractors.Contract.Providers
 {
     public interface IContractorProvider
     {
